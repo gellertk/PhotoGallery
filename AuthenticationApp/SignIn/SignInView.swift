@@ -11,8 +11,7 @@ class SignInView: UIView {
     
     public weak var signInViewControllerDelegate: SignInViewController? {
         didSet {
-            loginTextField.delegate = signInViewControllerDelegate
-            passwordTextField.delegate = signInViewControllerDelegate
+            setupDelegates()
         }
     }
     
@@ -37,13 +36,6 @@ class SignInView: UIView {
         return button
     }()
     
-//    private let separatorView: UIView = {
-//        let view = UIView(frame: CGRect.init(x: 0.0, y: 0.0, width: 0.0, height: 1))
-//        view.backgroundColor = .lightGray
-//
-//        return view
-//    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -51,15 +43,6 @@ class SignInView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func switchBasedNextTextField(_ textField: UITextField) {
-        switch textField {
-        case loginTextField:
-            passwordTextField.becomeFirstResponder()
-        default:
-            passwordTextField.resignFirstResponder()
-        }
     }
     
     func textFieldDidBeginEditing(_ textFieldTag: Int) {
@@ -84,7 +67,7 @@ class SignInView: UIView {
 private extension SignInView {
     
     func setupView() {
-        backgroundColor = .darkGray
+        backgroundColor = .black
         [loginTextField,
          passwordTextField,
          signInButton,
@@ -100,28 +83,29 @@ private extension SignInView {
         NSLayoutConstraint.activate([
             
             loginTextField.topAnchor.constraint(equalTo: topAnchor, constant: UIScreen.main.bounds.height * 0.4),
-            loginTextField.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementsHeight),
+            loginTextField.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementHeight),
             loginTextField.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                     constant: Constant.Numeric.defaultBorderConstraint),
             loginTextField.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                      constant: -Constant.Numeric.defaultBorderConstraint),
             
             passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor),
-            passwordTextField.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementsHeight),
+            passwordTextField.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementHeight),
             passwordTextField.leadingAnchor.constraint(equalTo: loginTextField.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: loginTextField.trailingAnchor),
             
-            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
-            signInButton.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementsHeight),
+            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: Constant.Numeric.defaultBorderConstraint / 2),
+            signInButton.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementHeight),
             signInButton.leadingAnchor.constraint(equalTo: loginTextField.leadingAnchor),
             signInButton.trailingAnchor.constraint(equalTo: loginTextField.trailingAnchor),
             
-            //            separatorView.topAnchor.constraint(equalTo: loginTextField.bottomAnchor),
-            //            separatorView.leadingAnchor.constraint(equalTo: loginTextField.leadingAnchor),
-            //            separatorView.trailingAnchor.constraint(equalTo: loginTextField.trailingAnchor)
-            
         ])
         
+    }
+    
+    func setupDelegates() {
+        loginTextField.delegate = signInViewControllerDelegate
+        passwordTextField.delegate = signInViewControllerDelegate
     }
     
     @objc func didTapSignInButton() {

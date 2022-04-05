@@ -9,21 +9,47 @@
 /* Begin PBXBuildFile section */
 		CB31FB3327FB526D005F66FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3227FB526D005F66FF /* AppDelegate.swift */; };
 		CB31FB3527FB526D005F66FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3427FB526D005F66FF /* SceneDelegate.swift */; };
-		CB31FB3727FB526D005F66FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3627FB526D005F66FF /* ViewController.swift */; };
-		CB31FB3A27FB526D005F66FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB31FB3827FB526D005F66FF /* Main.storyboard */; };
+		CB31FB3727FB526D005F66FF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3627FB526D005F66FF /* SignInViewController.swift */; };
 		CB31FB3C27FB526F005F66FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB31FB3B27FB526F005F66FF /* Assets.xcassets */; };
 		CB31FB3F27FB526F005F66FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB31FB3D27FB526F005F66FF /* LaunchScreen.storyboard */; };
+		CB31FB4827FB5472005F66FF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4727FB5472005F66FF /* SignInView.swift */; };
+		CB31FB4B27FB558A005F66FF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4A27FB558A005F66FF /* UIViewExtension.swift */; };
+		CB31FB4E27FB57DF005F66FF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4D27FB57DF005F66FF /* Constant.swift */; };
+		CB31FB5027FB5F3D005F66FF /* SignInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4F27FB5F3D005F66FF /* SignInTextField.swift */; };
+		CB31FB5227FB6102005F66FF /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB5127FB6102005F66FF /* Enumeration.swift */; };
+		CBD20A1427FCA2B600DA9886 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1327FCA2B600DA9886 /* SignInButton.swift */; };
+		CBD20A1627FCAB7A00DA9886 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1527FCAB7A00DA9886 /* AuthenticationViewController.swift */; };
+		CBD20A1927FCABEA00DA9886 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1827FCABEA00DA9886 /* AuthenticationView.swift */; };
+		CBD20A1B27FCBB1A00DA9886 /* AuthenticationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1A27FCBB1A00DA9886 /* AuthenticationNavigationController.swift */; };
+		CBD20A1D27FCBD1500DA9886 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1C27FCBD1500DA9886 /* RegistrationViewController.swift */; };
+		CBD20A2027FCBD8800DA9886 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1F27FCBD8800DA9886 /* RegistrationView.swift */; };
+		CBD20A2227FCC71D00DA9886 /* RegistrationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2127FCC71D00DA9886 /* RegistrationTextField.swift */; };
+		CBD20A2427FCC81600DA9886 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2327FCC81600DA9886 /* UIStackViewExtension.swift */; };
+		CBD20A2627FCC87200DA9886 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2527FCC87200DA9886 /* UITextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CB31FB2F27FB526D005F66FF /* AuthenticationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthenticationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB31FB3227FB526D005F66FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB31FB3427FB526D005F66FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CB31FB3627FB526D005F66FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CB31FB3927FB526D005F66FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB31FB3627FB526D005F66FF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CB31FB3B27FB526F005F66FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB31FB3E27FB526F005F66FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB31FB4027FB526F005F66FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB31FB4727FB5472005F66FF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		CB31FB4A27FB558A005F66FF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		CB31FB4D27FB57DF005F66FF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CB31FB4F27FB5F3D005F66FF /* SignInTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTextField.swift; sourceTree = "<group>"; };
+		CB31FB5127FB6102005F66FF /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
+		CBD20A1327FCA2B600DA9886 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		CBD20A1527FCAB7A00DA9886 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		CBD20A1827FCABEA00DA9886 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		CBD20A1A27FCBB1A00DA9886 /* AuthenticationNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNavigationController.swift; sourceTree = "<group>"; };
+		CBD20A1C27FCBD1500DA9886 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CBD20A1F27FCBD8800DA9886 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		CBD20A2127FCC71D00DA9886 /* RegistrationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTextField.swift; sourceTree = "<group>"; };
+		CBD20A2327FCC81600DA9886 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		CBD20A2527FCC87200DA9886 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +82,68 @@
 		CB31FB3127FB526D005F66FF /* AuthenticationApp */ = {
 			isa = PBXGroup;
 			children = (
-				CB31FB3227FB526D005F66FF /* AppDelegate.swift */,
-				CB31FB3427FB526D005F66FF /* SceneDelegate.swift */,
-				CB31FB3627FB526D005F66FF /* ViewController.swift */,
-				CB31FB3827FB526D005F66FF /* Main.storyboard */,
+				CB31FB4D27FB57DF005F66FF /* Constant.swift */,
+				CB31FB5127FB6102005F66FF /* Enumeration.swift */,
+				CB31FB4627FB5364005F66FF /* SupportingFiles */,
+				CB31FB4927FB5475005F66FF /* SignIn */,
+				CBD20A1727FCAB8000DA9886 /* Authentication */,
+				CBD20A1E27FCBD1A00DA9886 /* Registration */,
+				CB31FB4C27FB5590005F66FF /* Extensions */,
 				CB31FB3B27FB526F005F66FF /* Assets.xcassets */,
 				CB31FB3D27FB526F005F66FF /* LaunchScreen.storyboard */,
 				CB31FB4027FB526F005F66FF /* Info.plist */,
 			);
 			path = AuthenticationApp;
+			sourceTree = "<group>";
+		};
+		CB31FB4627FB5364005F66FF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CB31FB3227FB526D005F66FF /* AppDelegate.swift */,
+				CB31FB3427FB526D005F66FF /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CB31FB4927FB5475005F66FF /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				CB31FB3627FB526D005F66FF /* SignInViewController.swift */,
+				CB31FB4727FB5472005F66FF /* SignInView.swift */,
+				CB31FB4F27FB5F3D005F66FF /* SignInTextField.swift */,
+				CBD20A1327FCA2B600DA9886 /* SignInButton.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		CB31FB4C27FB5590005F66FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB31FB4A27FB558A005F66FF /* UIViewExtension.swift */,
+				CBD20A2327FCC81600DA9886 /* UIStackViewExtension.swift */,
+				CBD20A2527FCC87200DA9886 /* UITextFieldExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CBD20A1727FCAB8000DA9886 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CBD20A1527FCAB7A00DA9886 /* AuthenticationViewController.swift */,
+				CBD20A1827FCABEA00DA9886 /* AuthenticationView.swift */,
+				CBD20A1A27FCBB1A00DA9886 /* AuthenticationNavigationController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CBD20A1E27FCBD1A00DA9886 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				CBD20A1C27FCBD1500DA9886 /* RegistrationViewController.swift */,
+				CBD20A1F27FCBD8800DA9886 /* RegistrationView.swift */,
+				CBD20A2127FCC71D00DA9886 /* RegistrationTextField.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +206,6 @@
 			files = (
 				CB31FB3F27FB526F005F66FF /* LaunchScreen.storyboard in Resources */,
 				CB31FB3C27FB526F005F66FF /* Assets.xcassets in Resources */,
-				CB31FB3A27FB526D005F66FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +216,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB31FB3727FB526D005F66FF /* ViewController.swift in Sources */,
+				CB31FB4B27FB558A005F66FF /* UIViewExtension.swift in Sources */,
+				CB31FB3727FB526D005F66FF /* SignInViewController.swift in Sources */,
+				CBD20A1D27FCBD1500DA9886 /* RegistrationViewController.swift in Sources */,
+				CBD20A2627FCC87200DA9886 /* UITextFieldExtension.swift in Sources */,
+				CBD20A2027FCBD8800DA9886 /* RegistrationView.swift in Sources */,
+				CBD20A1627FCAB7A00DA9886 /* AuthenticationViewController.swift in Sources */,
 				CB31FB3327FB526D005F66FF /* AppDelegate.swift in Sources */,
+				CBD20A1427FCA2B600DA9886 /* SignInButton.swift in Sources */,
+				CB31FB5227FB6102005F66FF /* Enumeration.swift in Sources */,
+				CB31FB5027FB5F3D005F66FF /* SignInTextField.swift in Sources */,
+				CBD20A1927FCABEA00DA9886 /* AuthenticationView.swift in Sources */,
+				CB31FB4827FB5472005F66FF /* SignInView.swift in Sources */,
+				CBD20A2427FCC81600DA9886 /* UIStackViewExtension.swift in Sources */,
+				CBD20A2227FCC71D00DA9886 /* RegistrationTextField.swift in Sources */,
 				CB31FB3527FB526D005F66FF /* SceneDelegate.swift in Sources */,
+				CBD20A1B27FCBB1A00DA9886 /* AuthenticationNavigationController.swift in Sources */,
+				CB31FB4E27FB57DF005F66FF /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CB31FB3827FB526D005F66FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB31FB3927FB526D005F66FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CB31FB3D27FB526F005F66FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +378,6 @@
 				INFOPLIST_FILE = AuthenticationApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +405,6 @@
 				INFOPLIST_FILE = AuthenticationApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

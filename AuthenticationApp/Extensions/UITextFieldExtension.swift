@@ -9,13 +9,12 @@ import UIKit
 
 extension UITextField {
     
-    convenience init(arrangedSubviews: [UIView], axis: NSLayoutConstraint.Axis, spacing: CGFloat, distribution: UIStackView.Distribution) {
-//        self.init(arrangedSubviews: arrangedSubviews)
-//        self.axis = axis
-//        self.spacing = spacing
-//        self.distribution = distribution
-//        self.translatesAutoresizingMaskIntoConstraints = false
+    func setupDefaultProperties() {
+        layer.cornerRadius = Constant.Numeric.defaultCornerRadius
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
+        textColor = .white
+        backgroundColor = .darkGray
     }
-    
-    convenience
+
 }

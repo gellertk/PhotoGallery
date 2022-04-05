@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum TextFieldType {
+    
+    case login
+    case password
+    
+}

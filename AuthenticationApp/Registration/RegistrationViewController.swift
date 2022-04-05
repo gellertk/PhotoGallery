@@ -7,23 +7,40 @@
 
 import UIKit
 
-class RegistratinViewController: UIViewController {
+class RegistrationViewController: UIViewController {
+
+    private lazy var registrationView: RegistrationView = {
+        let view = RegistrationView()
+        view.registrationViewController = self
+
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
 
-        // Do any additional setup after loading the view.
+}
+
+private extension RegistrationViewController {
+    
+    func setupView() {
+        [registrationView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
+        setupConstraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupConstraints() {
+        view.makeSubviewConstraintsEqualToEdges(view: registrationView)
     }
-    */
+    
+}
 
+extension RegistrationViewController: UITextFieldDelegate {
+    
+    
+    
 }

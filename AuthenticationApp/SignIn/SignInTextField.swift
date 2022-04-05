@@ -11,8 +11,6 @@ class SignInTextField: UITextField {
     
     private let type: TextFieldType?
     
-    public var currentCount: Int = 0
-    
     private lazy var eyePasswordToggleButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "eye"), for: .normal)
@@ -29,7 +27,6 @@ class SignInTextField: UITextField {
         self.type = type
         super.init(frame: .zero)
         setupView()
-        //setupTargets()
     }
     
     required init?(coder: NSCoder) {
@@ -51,18 +48,11 @@ private extension SignInTextField {
     
     func setupView() {
         setupByType()
-        layer.cornerRadius = Constant.Numeric.defaultCornerRadius
-        backgroundColor = .black.withAlphaComponent(0.8)
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.lightGray.cgColor
-        textColor = .white
+        setupDefaultProperties()
+
         autocorrectionType = .no
         autocapitalizationType = .none
     }
-    
-//    func setupTargets() {
-//        addTarget(self, action: #selector(AuthenticationViewController.textFieldDidChange(_:)), for: .editingChanged)
-//    }
     
     func setupByType() {
         guard let type = type else {

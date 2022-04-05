@@ -9,21 +9,38 @@ import UIKit
 
 class AuthenticationViewController: UIViewController {
 
+    private lazy var authenticationView: AuthenticationView = {
+        let view = AuthenticationView()
+        view.authenticationViewController = self
+
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    public func openSignInViewController() {
+        let signInViewController = UINavigationController(rootViewController: SignInViewController()) 
+        signInViewController.modalPresentationStyle = .overFullScreen
+        present(signInViewController, animated: true)
     }
-    */
 
+}
+
+private extension AuthenticationViewController {
+    
+    func setupView() {
+        [authenticationView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
+        setupConstraints()
+    }
+    
+    func setupConstraints() {
+        view.makeSubviewConstraintsEqualToEdges(view: authenticationView)
+    }
+    
 }

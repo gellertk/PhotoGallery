@@ -8,13 +8,30 @@
 import UIKit
 
 class RegistrationTextField: UITextField {
+    
+    private static var tagFactory = 0
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    init(placeholder: String) {
+        super.init(frame: .zero)
+        setupView()
+        tag = RegistrationTextField.getUniqueTag()
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
+}
+
+private extension RegistrationTextField {
+    
+    func setupView() {
+        setupDefaultProperties()
+    }
+    
+    static func getUniqueTag() -> Int {
+        tagFactory += 1
+        return tagFactory
+    }
+    
 }

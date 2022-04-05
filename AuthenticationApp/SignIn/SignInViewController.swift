@@ -31,17 +31,21 @@ private extension SignInViewController {
             view.addSubview($0)
         }
         setupConstraints()
+        setupNavigationBar()
     }
     
     func setupConstraints() {
-        
-        NSLayoutConstraint.activate([
-            signInView.topAnchor.constraint(equalTo: view.topAnchor),
-            signInView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            signInView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            signInView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        
+        view.makeSubviewConstraintsEqualToEdges(view: signInView)
+    }
+    
+    func setupNavigationBar() {
+        let closeBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(didTapCloseBarButton))
+        closeBarButton.tintColor = .white
+        navigationItem.leftBarButtonItem = closeBarButton
+    }
+    
+    @objc func didTapCloseBarButton() {
+        dismiss(animated: true)
     }
     
 }
@@ -49,7 +53,7 @@ private extension SignInViewController {
 extension SignInViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        signInView.switchBasedNextTextField(textField)
+        signInView.makeNextResponder(textField: textField)
         
         return true
     }
