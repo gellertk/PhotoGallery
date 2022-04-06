@@ -9,12 +9,11 @@ import UIKit
 
 extension UITextField {
     
-    func setupDefaultProperties() {
-        layer.cornerRadius = Constant.Numeric.defaultCornerRadius
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.lightGray.cgColor
-        textColor = .white
-        backgroundColor = .darkGray
+    static var tagFactory = 0
+    
+    static func getUniqueTag() -> Int {
+        tagFactory += 1
+        return tagFactory
     }
-
+    
 }

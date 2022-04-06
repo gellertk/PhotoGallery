@@ -7,16 +7,22 @@
 
 import UIKit
 
-class AuthenticationView: UIView {
+protocol InitialViewDelegate: AnyObject {
+    func didTapToSignInVCButton()
+    func didTapToRegistrationVCButton()
+}
+
+class InitialView: UIView {
     
-    public weak var authenticationViewController: AuthenticationViewController?
-    
+    public weak var delegate: InitialViewDelegate?
+
+    //TODO: Make it universal
     private let toSignInVCButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Войти в другой аккаунт", for: .normal)
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.white.withAlphaComponent(0.3), for: .highlighted)
+        button.setTitle("Войти в аккаунт", for: .normal)
+        button.backgroundColor = Constant.Color.primary
+        button.setTitleColor(Constant.Color.secondary, for: .normal)
+        button.setTitleColor(Constant.Color.disabledSecondary, for: .highlighted)
         button.addTarget(self, action: #selector(didTapToSignInVCButton), for: .touchUpInside)
 
         return button
@@ -25,9 +31,10 @@ class AuthenticationView: UIView {
     private let toRegistrationVCButton: UIButton = {
         let button = UIButton()
         button.setTitle("Зарегистрироваться", for: .normal)
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.white.withAlphaComponent(0.3), for: .highlighted)
+        button.backgroundColor = Constant.Color.primary
+        button.setTitleColor(Constant.Color.secondary, for: .normal)
+        button.setTitleColor(Constant.Color.disabledSecondary, for: .highlighted)
+        button.addTarget(self, action: #selector(didTapToRegistrationVCButton), for: .touchUpInside)
         
         return button
     }()
@@ -43,14 +50,11 @@ class AuthenticationView: UIView {
 
 }
 
-private extension AuthenticationView {
+private extension InitialView {
     
     func setupView() {
-        [toSignInVCButton,
-         toRegistrationVCButton].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            addSubview($0)
-        }
+        addSubviews([toSignInVCButton,
+                     toRegistrationVCButton])
         setupConstraints()
     }
     
@@ -59,9 +63,12 @@ private extension AuthenticationView {
         NSLayoutConstraint.activate([
             
             toSignInVCButton.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementHeight),
-            toSignInVCButton.topAnchor.constraint(equalTo: topAnchor, constant: UIScreen.main.bounds.height * 0.8),
-            toSignInVCButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constant.Numeric.defaultBorderConstraint),
-            toSignInVCButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constant.Numeric.defaultBorderConstraint),
+            toSignInVCButton.topAnchor.constraint(equalTo: topAnchor,
+                                                  constant: UIScreen.main.bounds.height * 0.7),
+            toSignInVCButton.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                      constant: Constant.Numeric.defaultBorderConstraint),
+            toSignInVCButton.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                       constant: -Constant.Numeric.defaultBorderConstraint),
 
             toRegistrationVCButton.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementHeight),
             toRegistrationVCButton.topAnchor.constraint(equalTo: toSignInVCButton.bottomAnchor,
@@ -74,7 +81,11 @@ private extension AuthenticationView {
     }
     
     @objc func didTapToSignInVCButton() {
-        authenticationViewController?.openSignInViewController()
+        delegate?.didTapToSignInVCButton()
+    }
+    
+    @objc func didTapToRegistrationVCButton() {
+        delegate?.didTapToRegistrationVCButton()
     }
     
 }

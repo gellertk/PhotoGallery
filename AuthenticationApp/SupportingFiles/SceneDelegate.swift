@@ -16,8 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         self.window = UIWindow(windowScene: windowScene)
-        //let navigationViewController = AuthenticationViewController()
-        self.window?.rootViewController = AuthenticationNavigationController(rootViewController: AuthenticationViewController())
+        if Database.shared.activeUser != nil {
+            self.window?.rootViewController = MainNavigationController(rootViewController: MainTabBarController())
+        } else {
+            self.window?.rootViewController = MainNavigationController(rootViewController: InitialViewController())
+        }
         self.window?.makeKeyAndVisible()
     }
     

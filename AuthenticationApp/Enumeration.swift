@@ -7,9 +7,32 @@
 
 import Foundation
 
-enum TextFieldType {
+enum AuthenticationTextFieldType {
+    case signInLogin
+    case signInPassword
+    case signUpLogin
+    case signUpPassword
     
-    case login
-    case password
-    
+    var title: String {
+        switch self {
+        case .signInLogin:
+            return "Логин"
+        case .signInPassword:
+            return "Пароль"
+        case .signUpLogin:
+            return "Логин"
+        case .signUpPassword:
+            return "Пароль"
+        }
+    }
+}
+
+enum AuthenticationInterfaceType {
+    case signIn
+    case signUp
+}
+
+enum SettingKeys: String {
+    case users
+    case activeUser
 }

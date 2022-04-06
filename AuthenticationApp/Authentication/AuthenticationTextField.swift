@@ -7,9 +7,10 @@
 
 import UIKit
 
-class SignInTextField: UITextField {
+// TODO: Make it universal
+class AuthenticationTextField: UITextField {
     
-    private let type: TextFieldType?
+    private let type: AuthenticationTextFieldType?
     
     private lazy var eyePasswordToggleButton: UIButton = {
         let button = UIButton()
@@ -23,10 +24,11 @@ class SignInTextField: UITextField {
         return button
     }()
     
-    init(type: TextFieldType) {
+    init(type: AuthenticationTextFieldType) {
         self.type = type
         super.init(frame: .zero)
         setupView()
+        tag = AuthenticationTextField.getUniqueTag()
     }
     
     required init?(coder: NSCoder) {
@@ -44,12 +46,15 @@ class SignInTextField: UITextField {
     
 }
 
-private extension SignInTextField {
+private extension AuthenticationTextField {
     
     func setupView() {
         setupByType()
-        setupDefaultProperties()
-
+        layer.cornerRadius = Constant.Numeric.defaultCornerRadius
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
+        textColor = Constant.Color.secondary
+        backgroundColor = .darkGray
         autocorrectionType = .no
         autocapitalizationType = .none
     }
@@ -60,25 +65,22 @@ private extension SignInTextField {
         }
         
         switch type {
-        case .login:
-            layer.maskedCorners = [.layerMaxXMinYCorner,
-                                   .layerMinXMinYCorner]
-            attributedPlaceholder = NSAttributedString(
-                string: "Email или телефон",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-            )
+        case .signInLogin:
             clearButtonMode = .whileEditing
-        case .password:
-            layer.maskedCorners = [.layerMaxXMaxYCorner,
-                                   .layerMinXMaxYCorner]
-            attributedPlaceholder = NSAttributedString(
-                string: "Пароль",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-            )
+        case .signInPassword:
             isSecureTextEntry = true
             rightView = eyePasswordToggleButton
             rightViewMode = .always
+        case .signUpLogin:
+            break
+        case .signUpPassword:
+            break
         }
+        
+        attributedPlaceholder = NSAttributedString(
+            string: type.title,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         
     }
     
@@ -97,25 +99,25 @@ private extension SignInTextField {
     
 }
 
-extension SignInTextField {
+extension AuthenticationTextField {
     
-    override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+
         return bounds.inset(by: Constant.EdgeInset.signInTextField)
     }
-    
-    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        
+
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+
         return bounds.inset(by: Constant.EdgeInset.signInTextField)
     }
-    
-    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        
+
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+
         return bounds.inset(by: Constant.EdgeInset.signInTextField)
     }
-    
+
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
-        
+
         return CGRect(x: bounds.width - 40, y: 0, width: 30 , height: bounds.height)
     }
     

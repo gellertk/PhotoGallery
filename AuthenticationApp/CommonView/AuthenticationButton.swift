@@ -7,22 +7,23 @@
 
 import UIKit
 
-class SignInButton: UIButton {
+class AuthenticationButton: UIButton {
     
     override open var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? UIColor.white.withAlphaComponent(0.3) : UIColor.white
+            backgroundColor = isHighlighted ? Constant.Color.disabledSecondary : Constant.Color.secondary
         }
     }
     
     override var isEnabled: Bool {
         didSet {
-            backgroundColor = isEnabled ? UIColor.white : UIColor.white.withAlphaComponent(0.3)
+            backgroundColor = isEnabled ? Constant.Color.secondary :  Constant.Color.disabledSecondary
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(title: String) {
+        super.init(frame: .zero)
+        setTitle(title, for: .normal)
         setupView()
     }
     
@@ -32,12 +33,11 @@ class SignInButton: UIButton {
     
 }
 
-private extension SignInButton {
+private extension AuthenticationButton {
     
     func setupView() {
         isEnabled = false
-        setTitle("Войти", for: .normal)
-        setTitleColor(.black, for: .normal)
+        setTitleColor(Constant.Color.primary, for: .normal)
         layer.cornerRadius = Constant.Numeric.defaultCornerRadius
     }
     

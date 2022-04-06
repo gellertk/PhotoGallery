@@ -1,46 +1,59 @@
 //
-//  AuthenticationViewController.swift
-//  AuthenticationApp
+//  ViewController.swift
+//  signInApp
 //
-//  Created by Кирилл  Геллерт on 05.04.2022.
+//  Created by Кирилл  Геллерт on 04.04.2022.
 //
 
 import UIKit
 
 class AuthenticationViewController: UIViewController {
-
-    private lazy var authenticationView: AuthenticationView = {
-        let view = AuthenticationView()
-        view.authenticationViewController = self
-
+    
+    private var type: AuthenticationInterfaceType?
+    
+    private lazy var signInView: AuthenticationView  = {
+        let view = AuthenticationView(type: type)
+        view.delegate = self
+        
         return view
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
+    
+    init(type: AuthenticationInterfaceType) {
+        self.type = type
+        super.init(nibName: nil, bundle: nil)
     }
     
-    public func openSignInViewController() {
-        let signInViewController = UINavigationController(rootViewController: SignInViewController()) 
-        signInViewController.modalPresentationStyle = .overFullScreen
-        present(signInViewController, animated: true)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
+    
+    override func loadView() {
+        view = ScrollViewContainer(with: signInView)
+        addCloseBarButton()
+    }
+    
 }
 
-private extension AuthenticationViewController {
+extension AuthenticationViewController: AuthenticationViewDelegate {
     
-    func setupView() {
-        [authenticationView].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview($0)
+    func didTapSignInButton() {
+        let propertiesAndValues =
+            signInView.getTextFieldsPropertiesAndValues(properties: Constant.Collection.signInProperties)
+        
+        guard let user = Database.shared.findUser(login: propertiesAndValues["login"] ?? "") else {
+            signInView.showError(text: "Неверный логин или пароль")
+            return
         }
-        setupConstraints()
-    }
-    
-    func setupConstraints() {
-        view.makeSubviewConstraintsEqualToEdges(view: authenticationView)
+        
+        if user.password == propertiesAndValues["password"] ?? "" {
+            presentFullScreenViewController(viewController: MainTabBarController(),
+                                            animate: .flipHorizontal)
+            
+            Database.shared.saveActiveUser(user: user)
+            
+        } else {
+            signInView.showError(text: "Неверный логин или пароль")
+        }
     }
     
 }
