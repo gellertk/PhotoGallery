@@ -21,7 +21,7 @@ class MainTabBarController: UITabBarController {
     private func setup() {
         
         setViewControllers([
-            MainNavigationController(rootViewController: PhotoGalleryViewController()),
+            MainNavigationController(rootViewController: AlbumsViewController()) ,
             MainNavigationController(rootViewController: UserListViewController())
         ], animated: true)
         
@@ -39,7 +39,12 @@ class MainTabBarController: UITabBarController {
             
             tabBar.unselectedItemTintColor = Constant.Color.disabledSecondary
             tabBar.tintColor = Constant.Color.secondary
+            tabBar.isTranslucent = false
+            tabBar.barTintColor = .black
         }
+        
+        addChoosePhotoBarButton()
+        addExitBarButton()
         
     }
     

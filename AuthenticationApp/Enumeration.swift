@@ -13,7 +13,7 @@ enum AuthenticationTextFieldType {
     case signUpLogin
     case signUpPassword
     
-    var title: String {
+    var textFieldTitle: String {
         switch self {
         case .signInLogin:
             return "Логин"
@@ -30,9 +30,45 @@ enum AuthenticationTextFieldType {
 enum AuthenticationInterfaceType {
     case signIn
     case signUp
+    
+    var buttonTitle: String {
+        switch self {
+        case .signIn:
+            return "Войти"
+        case .signUp:
+            return "Зарегистрироваться"
+        }
+    }
 }
 
 enum SettingKeys: String {
     case users
     case activeUser
+}
+
+enum AlbumCollectionSectionType: Int {
+    
+    case all
+    case smartAlbums
+    case userCollections
+    
+    var description: String {
+        switch self {
+        case .all:
+            return "Все фото"
+        case .smartAlbums:
+            return "Умный альбом"
+        case .userCollections:
+            return "Пользовательская коллекция"
+        }
+    }
+    
+}
+
+enum RegisterIdentifiers: String {
+    case userListTableViewCellId
+    case albumsCollectionViewCellId
+    case photoCollectionViewCellId
+    case albumsTitleViewId
+    case photoCollectionViewId
 }

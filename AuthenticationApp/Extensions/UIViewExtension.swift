@@ -43,7 +43,7 @@ extension UIView {
     }
     
     //MARK: If all textfields has text, make button enabled
-    func setupButtonAvailablity(button: UIButton,
+    func setupButtonAvailability(button: UIButton,
                                 editedTextFieldTag: Int) -> Bool {
         
         for textField in allTextFields {

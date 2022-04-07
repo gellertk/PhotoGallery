@@ -44,7 +44,7 @@ extension UIViewController {
     
     @objc func didTapExitBarButton() {
         Database.shared.removeActiveUser()
-       //dismiss(animated: true)
+        SceneDelegate.shared.rootViewController.switchToLogout()
     }
     
     @objc func didTapChoosePhotoBarButton() {
@@ -56,7 +56,7 @@ extension UIViewController {
         let vc = MainNavigationController(rootViewController: viewController)
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = style
-        present(vc, animated: true)
+        present(vc, animated: true, completion: nil)
     }
     
 }

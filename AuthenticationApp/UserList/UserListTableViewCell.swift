@@ -25,7 +25,7 @@ class UserListTableViewCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: Constant.String.userListTableViewCellId)
+        super.init(style: style, reuseIdentifier: RegisterIdentifiers.userListTableViewCellId.rawValue)
         setupView()
     }
     
@@ -48,11 +48,8 @@ private extension UserListTableViewCell {
     func setupView() {
         backgroundColor = .darkGray
         selectionStyle = .none
-        [loginLabel,
-         avatarImageView].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            contentView.addSubview($0)
-        }
+        contentView.addSubviews([loginLabel,
+                                 avatarImageView])
         setupConstraints()
     }
     
@@ -73,7 +70,7 @@ private extension UserListTableViewCell {
 
 extension UserListTableViewCell {
     
-    func setup(login: String, imageData: Data) {
+    func setupContent(login: String, imageData: Data) {
         loginLabel.text = login
     }
     

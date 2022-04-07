@@ -12,23 +12,29 @@
 		CB31FB3727FB526D005F66FF /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3627FB526D005F66FF /* AuthenticationViewController.swift */; };
 		CB31FB3C27FB526F005F66FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB31FB3B27FB526F005F66FF /* Assets.xcassets */; };
 		CB31FB3F27FB526F005F66FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB31FB3D27FB526F005F66FF /* LaunchScreen.storyboard */; };
-		CB31FB4827FB5472005F66FF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4727FB5472005F66FF /* SignInView.swift */; };
 		CB31FB4B27FB558A005F66FF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4A27FB558A005F66FF /* UIViewExtension.swift */; };
 		CB31FB4E27FB57DF005F66FF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4D27FB57DF005F66FF /* Constant.swift */; };
 		CB31FB5027FB5F3D005F66FF /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4F27FB5F3D005F66FF /* AuthenticationTextField.swift */; };
 		CB31FB5227FB6102005F66FF /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB5127FB6102005F66FF /* Enumeration.swift */; };
+		CBBA903A27FF226800CAB0F6 /* Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA903927FF226800CAB0F6 /* Access.swift */; };
+		CBBA903C27FF265700CAB0F6 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA903B27FF265700CAB0F6 /* PhotosCollectionViewCell.swift */; };
+		CBBA903E27FF446A00CAB0F6 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA903D27FF446A00CAB0F6 /* AlbumsViewController.swift */; };
+		CBBA904127FF448200CAB0F6 /* AlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA904027FF448200CAB0F6 /* AlbumsView.swift */; };
+		CBBA904327FF44B400CAB0F6 /* AlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA904227FF44B400CAB0F6 /* AlbumsCollectionViewCell.swift */; };
+		CBBA904527FF453F00CAB0F6 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA904427FF453F00CAB0F6 /* PhotoViewController.swift */; };
+		CBBA904827FF457400CAB0F6 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA904727FF457400CAB0F6 /* PhotoView.swift */; };
+		CBBA904A27FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA904927FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift */; };
+		CBBA905027FF632E00CAB0F6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA904F27FF632E00CAB0F6 /* UIImageView+Extension.swift */; };
 		CBD20A1427FCA2B600DA9886 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1327FCA2B600DA9886 /* AuthenticationButton.swift */; };
 		CBD20A1627FCAB7A00DA9886 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1527FCAB7A00DA9886 /* InitialViewController.swift */; };
 		CBD20A1927FCABEA00DA9886 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1827FCABEA00DA9886 /* InitialView.swift */; };
 		CBD20A1B27FCBB1A00DA9886 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1A27FCBB1A00DA9886 /* MainNavigationController.swift */; };
-		CBD20A1D27FCBD1500DA9886 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1C27FCBD1500DA9886 /* RegistrationViewController.swift */; };
-		CBD20A2027FCBD8800DA9886 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1F27FCBD8800DA9886 /* SignUpView.swift */; };
-		CBD20A2227FCC71D00DA9886 /* RegistrationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2127FCC71D00DA9886 /* RegistrationTextField.swift */; };
+		CBD20A2027FCBD8800DA9886 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A1F27FCBD8800DA9886 /* AuthenticationView.swift */; };
 		CBD20A2427FCC81600DA9886 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2327FCC81600DA9886 /* UIStackViewExtension.swift */; };
 		CBD20A2627FCC87200DA9886 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2527FCC87200DA9886 /* UITextFieldExtension.swift */; };
 		CBD20A2827FCE32F00DA9886 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2727FCE32F00DA9886 /* UIViewControllerExtension.swift */; };
-		CBD20A2A27FCF38800DA9886 /* PhotoGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2927FCF38800DA9886 /* PhotoGalleryViewController.swift */; };
-		CBD20A2D27FCF3F900DA9886 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2C27FCF3F900DA9886 /* PhotoGalleryView.swift */; };
+		CBD20A2A27FCF38800DA9886 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2927FCF38800DA9886 /* PhotosViewController.swift */; };
+		CBD20A2D27FCF3F900DA9886 /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2C27FCF3F900DA9886 /* PhotosView.swift */; };
 		CBD20A2F27FCFA5D00DA9886 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A2E27FCFA5D00DA9886 /* MainTabBarController.swift */; };
 		CBD20A3127FCFAC000DA9886 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A3027FCFAC000DA9886 /* UserListViewController.swift */; };
 		CBD20A3427FCFADC00DA9886 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A3327FCFADC00DA9886 /* UserListView.swift */; };
@@ -38,6 +44,8 @@
 		CBD20A3F27FDBDFB00DA9886 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A3E27FDBDFB00DA9886 /* User.swift */; };
 		CBD20A4227FDE49C00DA9886 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4127FDE49C00DA9886 /* ErrorView.swift */; };
 		CBD20A4427FDF2DB00DA9886 /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4327FDF2DB00DA9886 /* UserListTableViewCell.swift */; };
+		CBD20A4627FE47CB00DA9886 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4527FE47CA00DA9886 /* RootViewController.swift */; };
+		CBD20A4827FE47ED00DA9886 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4727FE47ED00DA9886 /* AppDelegateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,23 +56,29 @@
 		CB31FB3B27FB526F005F66FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB31FB3E27FB526F005F66FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB31FB4027FB526F005F66FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB31FB4727FB5472005F66FF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		CB31FB4A27FB558A005F66FF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		CB31FB4D27FB57DF005F66FF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CB31FB4F27FB5F3D005F66FF /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
 		CB31FB5127FB6102005F66FF /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
+		CBBA903927FF226800CAB0F6 /* Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access.swift; sourceTree = "<group>"; };
+		CBBA903B27FF265700CAB0F6 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBBA903D27FF446A00CAB0F6 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		CBBA904027FF448200CAB0F6 /* AlbumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsView.swift; sourceTree = "<group>"; };
+		CBBA904227FF44B400CAB0F6 /* AlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBBA904427FF453F00CAB0F6 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		CBBA904727FF457400CAB0F6 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		CBBA904927FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		CBBA904F27FF632E00CAB0F6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		CBD20A1327FCA2B600DA9886 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		CBD20A1527FCAB7A00DA9886 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		CBD20A1827FCABEA00DA9886 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		CBD20A1A27FCBB1A00DA9886 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		CBD20A1C27FCBD1500DA9886 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		CBD20A1F27FCBD8800DA9886 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		CBD20A2127FCC71D00DA9886 /* RegistrationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTextField.swift; sourceTree = "<group>"; };
+		CBD20A1F27FCBD8800DA9886 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		CBD20A2327FCC81600DA9886 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
 		CBD20A2527FCC87200DA9886 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		CBD20A2727FCE32F00DA9886 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		CBD20A2927FCF38800DA9886 /* PhotoGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewController.swift; sourceTree = "<group>"; };
-		CBD20A2C27FCF3F900DA9886 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
+		CBD20A2927FCF38800DA9886 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		CBD20A2C27FCF3F900DA9886 /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
 		CBD20A2E27FCFA5D00DA9886 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CBD20A3027FCFAC000DA9886 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		CBD20A3327FCFADC00DA9886 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -74,6 +88,8 @@
 		CBD20A3E27FDBDFB00DA9886 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBD20A4127FDE49C00DA9886 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		CBD20A4327FDF2DB00DA9886 /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
+		CBD20A4527FE47CA00DA9886 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		CBD20A4727FE47ED00DA9886 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +124,16 @@
 			children = (
 				CB31FB4D27FB57DF005F66FF /* Constant.swift */,
 				CB31FB5127FB6102005F66FF /* Enumeration.swift */,
+				CBBA904927FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift */,
+				CBBA903927FF226800CAB0F6 /* Access.swift */,
 				CBD20A4027FDBE0300DA9886 /* Model */,
 				CBD20A3B27FD7ACA00DA9886 /* Services */,
 				CBD20A3527FCFB0900DA9886 /* ManagementControllers */,
 				CBD20A1727FCAB8000DA9886 /* Initial */,
 				CB31FB4927FB5475005F66FF /* Authentication */,
-				CBD20A1E27FCBD1A00DA9886 /* Registration */,
-				CBD20A2B27FCF38C00DA9886 /* PhotoGallery */,
+				CBBA903F27FF447000CAB0F6 /* Albums */,
+				CBD20A2B27FCF38C00DA9886 /* Photos */,
+				CBBA904627FF455300CAB0F6 /* Photo */,
 				CBD20A3227FCFAC800DA9886 /* UserList */,
 				CB31FB4C27FB5590005F66FF /* Extensions */,
 				CBD20A3A27FD7AC000DA9886 /* CommonView */,
@@ -139,8 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				CB31FB3627FB526D005F66FF /* AuthenticationViewController.swift */,
-				CBD20A1F27FCBD8800DA9886 /* SignUpView.swift */,
-				CB31FB4727FB5472005F66FF /* SignInView.swift */,
+				CBD20A1F27FCBD8800DA9886 /* AuthenticationView.swift */,
 				CB31FB4F27FB5F3D005F66FF /* AuthenticationTextField.swift */,
 			);
 			path = Authentication;
@@ -151,10 +169,31 @@
 			children = (
 				CBD20A2727FCE32F00DA9886 /* UIViewControllerExtension.swift */,
 				CB31FB4A27FB558A005F66FF /* UIViewExtension.swift */,
+				CBBA904F27FF632E00CAB0F6 /* UIImageView+Extension.swift */,
 				CBD20A2327FCC81600DA9886 /* UIStackViewExtension.swift */,
 				CBD20A2527FCC87200DA9886 /* UITextFieldExtension.swift */,
+				CBD20A4727FE47ED00DA9886 /* AppDelegateExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CBBA903F27FF447000CAB0F6 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				CBBA903D27FF446A00CAB0F6 /* AlbumsViewController.swift */,
+				CBBA904027FF448200CAB0F6 /* AlbumsView.swift */,
+				CBBA904227FF44B400CAB0F6 /* AlbumsCollectionViewCell.swift */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
+		CBBA904627FF455300CAB0F6 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				CBBA904427FF453F00CAB0F6 /* PhotoViewController.swift */,
+				CBBA904727FF457400CAB0F6 /* PhotoView.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		CBD20A1727FCAB8000DA9886 /* Initial */ = {
@@ -166,22 +205,14 @@
 			path = Initial;
 			sourceTree = "<group>";
 		};
-		CBD20A1E27FCBD1A00DA9886 /* Registration */ = {
+		CBD20A2B27FCF38C00DA9886 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				CBD20A1C27FCBD1500DA9886 /* RegistrationViewController.swift */,
-				CBD20A2127FCC71D00DA9886 /* RegistrationTextField.swift */,
+				CBD20A2927FCF38800DA9886 /* PhotosViewController.swift */,
+				CBD20A2C27FCF3F900DA9886 /* PhotosView.swift */,
+				CBBA903B27FF265700CAB0F6 /* PhotosCollectionViewCell.swift */,
 			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
-		CBD20A2B27FCF38C00DA9886 /* PhotoGallery */ = {
-			isa = PBXGroup;
-			children = (
-				CBD20A2927FCF38800DA9886 /* PhotoGalleryViewController.swift */,
-				CBD20A2C27FCF3F900DA9886 /* PhotoGalleryView.swift */,
-			);
-			path = PhotoGallery;
+			path = Photos;
 			sourceTree = "<group>";
 		};
 		CBD20A3227FCFAC800DA9886 /* UserList */ = {
@@ -199,6 +230,7 @@
 			children = (
 				CBD20A2E27FCFA5D00DA9886 /* MainTabBarController.swift */,
 				CBD20A1A27FCBB1A00DA9886 /* MainNavigationController.swift */,
+				CBD20A4527FE47CA00DA9886 /* RootViewController.swift */,
 			);
 			path = ManagementControllers;
 			sourceTree = "<group>";
@@ -301,31 +333,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB31FB4B27FB558A005F66FF /* UIViewExtension.swift in Sources */,
+				CBBA903A27FF226800CAB0F6 /* Access.swift in Sources */,
 				CBD20A3127FCFAC000DA9886 /* UserListViewController.swift in Sources */,
 				CB31FB3727FB526D005F66FF /* AuthenticationViewController.swift in Sources */,
-				CBD20A2D27FCF3F900DA9886 /* PhotoGalleryView.swift in Sources */,
+				CBBA903E27FF446A00CAB0F6 /* AlbumsViewController.swift in Sources */,
+				CBD20A2D27FCF3F900DA9886 /* PhotosView.swift in Sources */,
 				CBD20A2827FCE32F00DA9886 /* UIViewControllerExtension.swift in Sources */,
 				CBD20A3F27FDBDFB00DA9886 /* User.swift in Sources */,
-				CBD20A1D27FCBD1500DA9886 /* RegistrationViewController.swift in Sources */,
+				CBD20A4827FE47ED00DA9886 /* AppDelegateExtension.swift in Sources */,
 				CBD20A2627FCC87200DA9886 /* UITextFieldExtension.swift in Sources */,
-				CBD20A2027FCBD8800DA9886 /* SignUpView.swift in Sources */,
+				CBD20A2027FCBD8800DA9886 /* AuthenticationView.swift in Sources */,
+				CBBA904327FF44B400CAB0F6 /* AlbumsCollectionViewCell.swift in Sources */,
 				CBD20A1627FCAB7A00DA9886 /* InitialViewController.swift in Sources */,
+				CBBA903C27FF265700CAB0F6 /* PhotosCollectionViewCell.swift in Sources */,
 				CB31FB3327FB526D005F66FF /* AppDelegate.swift in Sources */,
 				CBD20A4227FDE49C00DA9886 /* ErrorView.swift in Sources */,
+				CBBA905027FF632E00CAB0F6 /* UIImageView+Extension.swift in Sources */,
 				CBD20A1427FCA2B600DA9886 /* AuthenticationButton.swift in Sources */,
 				CBD20A2F27FCFA5D00DA9886 /* MainTabBarController.swift in Sources */,
+				CBBA904A27FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift in Sources */,
 				CB31FB5227FB6102005F66FF /* Enumeration.swift in Sources */,
 				CB31FB5027FB5F3D005F66FF /* AuthenticationTextField.swift in Sources */,
 				CBD20A1927FCABEA00DA9886 /* InitialView.swift in Sources */,
-				CB31FB4827FB5472005F66FF /* SignInView.swift in Sources */,
 				CBD20A3D27FDBDB000DA9886 /* Database.swift in Sources */,
 				CBD20A3927FD187D00DA9886 /* KeyboardService.swift in Sources */,
+				CBBA904827FF457400CAB0F6 /* PhotoView.swift in Sources */,
+				CBBA904127FF448200CAB0F6 /* AlbumsView.swift in Sources */,
 				CBD20A2427FCC81600DA9886 /* UIStackViewExtension.swift in Sources */,
 				CBD20A3727FD150400DA9886 /* ScrollViewContainer.swift in Sources */,
+				CBD20A4627FE47CB00DA9886 /* RootViewController.swift in Sources */,
+				CBBA904527FF453F00CAB0F6 /* PhotoViewController.swift in Sources */,
 				CBD20A3427FCFADC00DA9886 /* UserListView.swift in Sources */,
 				CBD20A4427FDF2DB00DA9886 /* UserListTableViewCell.swift in Sources */,
-				CBD20A2A27FCF38800DA9886 /* PhotoGalleryViewController.swift in Sources */,
-				CBD20A2227FCC71D00DA9886 /* RegistrationTextField.swift in Sources */,
+				CBD20A2A27FCF38800DA9886 /* PhotosViewController.swift in Sources */,
 				CB31FB3527FB526D005F66FF /* SceneDelegate.swift in Sources */,
 				CBD20A1B27FCBB1A00DA9886 /* MainNavigationController.swift in Sources */,
 				CB31FB4E27FB57DF005F66FF /* Constant.swift in Sources */,

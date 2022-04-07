@@ -15,12 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else {
             return
         }
+        
         self.window = UIWindow(windowScene: windowScene)
-        if Database.shared.activeUser != nil {
-            self.window?.rootViewController = MainNavigationController(rootViewController: MainTabBarController())
-        } else {
-            self.window?.rootViewController = MainNavigationController(rootViewController: InitialViewController())
-        }
+        //        if Database.shared.activeUser != nil {
+        //            self.window?.rootViewController = MainNavigationController(rootViewController: InitialViewController())
+        //            //self.window?.rootViewController?.present(AuthenticationViewController(type: .signIn), animated: true, completion: nil)
+        //            //window?.rootViewController?.modalPresentationStyle = .fullScreen
+        //        } else {
+        //            self.window?.rootViewController = MainNavigationController(rootViewController: InitialViewController())
+        //        }
+        self.window?.rootViewController = RootViewController()
         self.window?.makeKeyAndVisible()
     }
     

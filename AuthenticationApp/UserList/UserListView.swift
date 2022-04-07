@@ -20,12 +20,11 @@ class UserListView: UIView {
         }
     }
     
-    private lazy var usersTableView: UITableView = {
+    public lazy var usersTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = Constant.Color.primary
         tableView.register(UserListTableViewCell.self,
-                           forCellReuseIdentifier: Constant.String.userListTableViewCellId)
-        
+                           forCellReuseIdentifier: RegisterIdentifiers.userListTableViewCellId.rawValue)
         
         return tableView
     }()

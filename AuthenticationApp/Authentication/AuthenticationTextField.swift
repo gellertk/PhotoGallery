@@ -78,7 +78,7 @@ private extension AuthenticationTextField {
         }
         
         attributedPlaceholder = NSAttributedString(
-            string: type.title,
+            string: type.textFieldTitle,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         

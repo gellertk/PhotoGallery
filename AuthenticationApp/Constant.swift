@@ -10,7 +10,7 @@ import UIKit
 struct Constant {
     
     struct String {
-        static let userListTableViewCellId = "userListId"
+      
     }
     
     struct Color {

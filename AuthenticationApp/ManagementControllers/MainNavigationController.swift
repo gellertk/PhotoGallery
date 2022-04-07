@@ -13,10 +13,15 @@ class MainNavigationController: UINavigationController {
         .lightContent
     }
     
+    override var prefersStatusBarHidden: Bool {
+        false
+    }
+    
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
-        //navigationBar.barTintColor = .black
-        //navigationBar.isTranslucent = false
+        addChoosePhotoBarButton()
+        addExitBarButton()
+        navigationBar.isTranslucent = false
     }
     
     required init?(coder aDecoder: NSCoder) {
