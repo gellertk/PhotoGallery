@@ -9,6 +9,7 @@ import UIKit
 import Photos
 
 extension UIImageView {
+    
     func fetchImageAsset(_ asset: PHAsset?,
                          targetSize size: CGSize,
                          contentMode: PHImageContentMode = .aspectFill,
@@ -16,7 +17,6 @@ extension UIImageView {
                          completionHandler: ((Bool) -> Void)?) {
         
         guard let asset = asset else {
-            self.image = UIImage(systemName: "photo")
             return
         }
         
@@ -31,4 +31,5 @@ extension UIImageView {
                options: options,
                resultHandler: resultHandler)
     }
+    
 }

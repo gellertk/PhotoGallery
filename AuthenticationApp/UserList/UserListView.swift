@@ -24,7 +24,8 @@ class UserListView: UIView {
         let tableView = UITableView()
         tableView.backgroundColor = Constant.Color.primary
         tableView.register(UserListTableViewCell.self,
-                           forCellReuseIdentifier: RegisterIdentifiers.userListTableViewCellId.rawValue)
+                           forCellReuseIdentifier: UserListTableViewCell.reuseIdentifier)
+        tableView.separatorColor = .white.withAlphaComponent(0.3)
         
         return tableView
     }()

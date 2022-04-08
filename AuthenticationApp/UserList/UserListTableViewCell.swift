@@ -8,6 +8,8 @@
 import UIKit
 
 class UserListTableViewCell: UITableViewCell {
+    
+    static let reuseIdentifier = "userListTableViewCellId"
 
     private let loginLabel: UILabel = {
         let label = UILabel()
@@ -19,13 +21,15 @@ class UserListTableViewCell: UITableViewCell {
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = Constant.Color.secondary
+        imageView.contentMode = .scaleAspectFill
+        //imageView.backgroundColor = .darkGray
         //label.textColor = Constant.Color.secondary
         
         return imageView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: RegisterIdentifiers.userListTableViewCellId.rawValue)
+        super.init(style: style, reuseIdentifier: UserListTableViewCell.reuseIdentifier)
         setupView()
     }
     
@@ -35,10 +39,12 @@ class UserListTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.layer.cornerRadius = Constant.Numeric.defaultCornerRadius
-        layer.cornerRadius = Constant.Numeric.defaultCornerRadius
-        
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
+        avatarImageView.layer.cornerRadius = frame.width / 2
+
+//        contentView.layer.cornerRadius = Constant.Numeric.defaultCornerRadius
+//        layer.cornerRadius = Constant.Numeric.defaultCornerRadius
+        //avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
+        //avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
     }
     
 }
@@ -46,7 +52,10 @@ class UserListTableViewCell: UITableViewCell {
 private extension UserListTableViewCell {
     
     func setupView() {
-        backgroundColor = .darkGray
+        preservesSuperviewLayoutMargins = false
+        separatorInset = .zero
+        layoutMargins = .zero
+        backgroundColor = Constant.Color.primary
         selectionStyle = .none
         contentView.addSubviews([loginLabel,
                                  avatarImageView])
@@ -62,7 +71,9 @@ private extension UserListTableViewCell {
             loginLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
 
             avatarImageView.centerYAnchor.constraint(equalTo: loginLabel.centerYAnchor),
-            avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            avatarImageView.widthAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementHeight - 5),
+            avatarImageView.heightAnchor.constraint(equalToConstant: Constant.Numeric.defaultUIElementHeight - 5)
         ])
     }
     
@@ -70,8 +81,9 @@ private extension UserListTableViewCell {
 
 extension UserListTableViewCell {
     
-    func setupContent(login: String, imageData: Data) {
+    func setupContent(login: String, image: UIImage) {
         loginLabel.text = login
+        avatarImageView.image = image
     }
     
 }

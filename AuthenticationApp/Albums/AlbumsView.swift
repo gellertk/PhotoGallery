@@ -32,7 +32,7 @@ class AlbumsView: UIView {
     lazy var albumsCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: albumsCollectionViewFlowLayout)
         collectionView.register(AlbumsCollectionViewCell.self,
-                                forCellWithReuseIdentifier: RegisterIdentifiers.albumsCollectionViewCellId.rawValue)
+                                forCellWithReuseIdentifier: AlbumsCollectionViewCell.reuseIdentifier)
         collectionView.backgroundColor = Constant.Color.primary
         
         return collectionView
@@ -45,6 +45,12 @@ class AlbumsView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        albumsCollectionViewFlowLayout.itemSize = CGSize(width: frame.width / 2 - 1,
+                                                        height: frame.width / 2 - 1)
     }
 
 }

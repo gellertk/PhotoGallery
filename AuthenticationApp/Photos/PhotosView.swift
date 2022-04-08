@@ -15,12 +15,12 @@ class PhotosView: UIView {
     
     public weak var delegate: PhotosViewDelegate? {
         didSet {
-            photoCollectionView.delegate = delegate as? UICollectionViewDelegate
-            photoCollectionView.dataSource = delegate as? UICollectionViewDataSource
+            photosCollectionView.delegate = delegate as? UICollectionViewDelegate
+            photosCollectionView.dataSource = delegate as? UICollectionViewDataSource
         }
     }
     
-    private let photoCollectionViewFlowLayout: UICollectionViewFlowLayout = {
+    private let photosCollectionViewFlowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumLineSpacing = 1
@@ -29,10 +29,12 @@ class PhotosView: UIView {
         return flowLayout
     }()
     
-    public lazy var photoCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: photoCollectionViewFlowLayout)
+    public lazy var photosCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero,
+                                              collectionViewLayout: photosCollectionViewFlowLayout)
         collectionView.register(PhotosCollectionViewCell.self,
-                                forCellWithReuseIdentifier: RegisterIdentifiers.photoCollectionViewCellId.rawValue)
+                                forCellWithReuseIdentifier: PhotosCollectionViewCell.reuseIdentifier)
+        collectionView.backgroundColor = Constant.Color.primary
         
         return collectionView
     }()
@@ -48,8 +50,9 @@ class PhotosView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        photoCollectionViewFlowLayout.itemSize = CGSize(width: frame.size.width / 4 - 1,
-                                                        height: frame.size.width / 4 - 1)
+        //photosCollectionView.collectionViewLayout.invalidateLayout()
+        //photosCollectionViewFlowLayout.itemSize = CGSize(width: frame.width / 3 - 1,
+                                                        //height: frame.width / 3 - 1)
     }
     
 }
@@ -57,18 +60,18 @@ class PhotosView: UIView {
 private extension PhotosView {
     
     func setupView() {
-        addSubviews([photoCollectionView])
-        setupConstraints()
         backgroundColor = Constant.Color.primary
+        addSubviews([photosCollectionView])
+        setupConstraints()
     }
     
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            photoCollectionView.topAnchor.constraint(equalTo: topAnchor),
-            photoCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            photoCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            photoCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            photosCollectionView.topAnchor.constraint(equalTo: topAnchor),
+            photosCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            photosCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            photosCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
         
     }

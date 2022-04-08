@@ -87,7 +87,7 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RegisterIdentifiers.albumsCollectionViewCellId.rawValue,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? AlbumsCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -111,7 +111,7 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         cell.albumImageView.fetchImageAsset(asset, targetSize: cell.bounds.size, completionHandler: nil)
-        
+                
         return cell
     }
     
@@ -119,22 +119,22 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let sectionType = sections[indexPath.section]
         let item = indexPath.item
-        
+
         let assets: PHFetchResult<PHAsset>
         let title: String
-        
+
         switch sectionType {
         case .all:
             assets = allPhotos
             title = AlbumCollectionSectionType.all.description
         case .smartAlbums, .userCollections:
-            let album =
-            sectionType == .smartAlbums ? smartAlbums[item] : userCollections[item]
+            let album = sectionType == .smartAlbums ? smartAlbums[item] : userCollections[item]
             assets = PHAsset.fetchAssets(in: album, options: nil)
             title = album.localizedTitle ?? ""
         }
-        
-        return PhotosCollectionViewController(assets: assets, title: title)
+
+        let vc = PhotosViewController(assets: assets, title: title)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

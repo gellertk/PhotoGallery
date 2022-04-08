@@ -8,7 +8,15 @@
 import Foundation
 
 struct User: Codable {
-    let login: String
+    
+    var login: String
     let password: String
-    let avatar: Data
+    var avatarURL: URL?
+    
+    init(login: String, password: String) {
+        self.login = login
+        self.password = password
+        self.avatarURL = nil
+    }
+    
 }

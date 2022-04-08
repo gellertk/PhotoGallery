@@ -9,14 +9,16 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    private let photoImageView: UIImageView = {
+    static let reuseIdentifier = "photosCollectionViewCellId"
+    
+    let photoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
         return imageView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -26,8 +28,9 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupContent(image: UIImage) {
-        photoImageView.image = image
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        photoImageView.image = UIImage(systemName: "person")
     }
     
 }
@@ -35,7 +38,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
 private extension PhotosCollectionViewCell {
     
     func setupView() {
-        contentView.backgroundColor = .lightGray
         contentView.addSubviews([photoImageView])
         setupConstraint()
     }

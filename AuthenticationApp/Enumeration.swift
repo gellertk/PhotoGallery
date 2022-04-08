@@ -44,6 +44,7 @@ enum AuthenticationInterfaceType {
 enum SettingKeys: String {
     case users
     case activeUser
+    case avatar
 }
 
 enum AlbumCollectionSectionType: Int {
@@ -65,10 +66,9 @@ enum AlbumCollectionSectionType: Int {
     
 }
 
-enum RegisterIdentifiers: String {
-    case userListTableViewCellId
-    case albumsCollectionViewCellId
-    case photoCollectionViewCellId
-    case albumsTitleViewId
-    case photoCollectionViewId
-}
+//enum RegisterIdentifiers: String {
+//    case userListTableViewCellId
+//    case albumsCollectionViewCellId
+//    case photosCollectionViewCellId
+//    case albumsTitleViewId
+//}

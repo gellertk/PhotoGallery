@@ -43,7 +43,6 @@ class MainTabBarController: UITabBarController {
             tabBar.barTintColor = .black
         }
         
-        addChoosePhotoBarButton()
         addExitBarButton()
         
     }

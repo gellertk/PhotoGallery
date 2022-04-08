@@ -27,9 +27,9 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addChild(current)
-        current.view.frame = view.bounds              // 2
-        view.addSubview(current.view)                 // 3
-        current.didMove(toParent: self) //
+        current.view.frame = view.bounds
+        view.addSubview(current.view)
+        current.didMove(toParent: self)
     }
     
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
@@ -63,14 +63,14 @@ class RootViewController: UIViewController {
     
     func showLoginScreen() {
         let new = UINavigationController(rootViewController: InitialViewController())
-        addChild(new)                    // 2
-        new.view.frame = view.bounds                   // 3
-        view.addSubview(new.view)                      // 4
-        new.didMove(toParent: self)      // 5
-        current.willMove(toParent: nil)  // 6
-        current.view.removeFromSuperview()         // 7
-        current.removeFromParent()       // 8
-        current = new                                  // 9
+        addChild(new)
+        new.view.frame = view.bounds
+        view.addSubview(new.view)
+        new.didMove(toParent: self)
+        current.willMove(toParent: nil)
+        current.view.removeFromSuperview()
+        current.removeFromParent()
+        current = new
     }
     
     func switchToMainScreen() {

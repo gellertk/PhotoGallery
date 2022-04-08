@@ -9,10 +9,13 @@ import UIKit
 
 class AlbumsCollectionViewCell: UICollectionViewCell {
     
+    static let reuseIdentifier = "albumsCollectionViewCellId"
+    
     public let albumImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "photo")
+        imageView.clipsToBounds = true
         
         return imageView
     }()

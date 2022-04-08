@@ -10,12 +10,22 @@ import Photos
 
 class PhotosViewController: UIViewController {
     
-    var assets: PHFetchResult<PHAsset>
-
-    init?(assets: PHFetchResult<PHAsset>) {
-      self.assets = assets
-      super.init(coder: coder)
-      self.title = title
+    private var isSelectionMode = false {
+        didSet {
+            if isSelectionMode {
+                navigationItem.rightBarButtonItem?.title = "Закончить выбор"
+            } else {
+                navigationItem.rightBarButtonItem?.title = "Выбрать аватар"
+            }
+            tabBarController?.tabBar.isHidden = isSelectionMode
+        }
+    }
+    private let photosView = PhotosView()
+    private var assets: PHFetchResult<PHAsset>
+    
+    init(assets: PHFetchResult<PHAsset>, title: String) {
+        self.assets = assets
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -23,15 +33,14 @@ class PhotosViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-      super.viewDidLoad()
-      PHPhotoLibrary.shared().register(self)
+        super.viewDidLoad()
+        PHPhotoLibrary.shared().register(self)
+        addChoosePhotoBarButton()
     }
-
+    
     deinit {
-      PHPhotoLibrary.shared().unregisterChangeObserver(self)
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
-        
-    private let photosView = PhotosView()
     
     override func loadView() {
         let view = photosView
@@ -39,76 +48,25 @@ class PhotosViewController: UIViewController {
         self.view = view
     }
     
-}
-
-extension PhotosViewController {
-    
-    func startFetchingAssets() {
-        getPermissionIfNecessary { granted in
-            guard granted else {
-                return
-            }
-            self.fetchAssets()
-            DispatchQueue.main.async {
-                self.photosView.photoCollectionView.reloadData()
-            }
-        }
-        PHPhotoLibrary.shared().register(self)
+    func addChoosePhotoBarButton() {
+        let choosePhotoBarButton = UIBarButtonItem(title: "Выбрать аватар",
+                                                   style: .plain,
+                                                   target: self,
+                                                   action: #selector(didTapChoosePhotoBarButton))
+        choosePhotoBarButton.customView?.layer.cornerRadius =  choosePhotoBarButton.width / 2
+        choosePhotoBarButton.customView?.backgroundColor = .darkGray
+        choosePhotoBarButton.tintColor = Constant.Color.secondary
+        navigationItem.rightBarButtonItem = choosePhotoBarButton
     }
     
-    func getPermissionIfNecessary(completionHandler: @escaping (Bool) -> Void) {
-        guard PHPhotoLibrary.authorizationStatus() != .authorized else {
-            completionHandler(true)
-            return
-        }
-        
-        PHPhotoLibrary.requestAuthorization { status in
-            completionHandler(status == .authorized ? true : false)
-        }
+    @objc func didTapChoosePhotoBarButton() {
+        isSelectionMode.toggle()
     }
     
-    func fetchAssets() {
-        let allPhotosOptions = PHFetchOptions()
-        allPhotosOptions.sortDescriptors = [
-            NSSortDescriptor(
-                key: "creationDate",
-                ascending: false)
-        ]
-        // 2
-        allPhotos = PHAsset.fetchAssets(with: allPhotosOptions)
-        // 3
-        //        smartAlbums = PHAssetCollection.fetchAssetCollections(
-        //            with: .smartAlbum,
-        //            subtype: .albumRegular,
-        //            options: nil)
-        //        // 4
-        //        userCollections = PHAssetCollection.fetchAssetCollections(
-        //            with: .album,
-        //            subtype: .albumRegular,
-        //            options: nil)
-    }
-    
-    
-    
-}
-
-extension PhotosViewController: PHPhotoLibraryChangeObserver {
-    
-    func photoLibraryDidChange(_ changeInstance: PHChange) {
-        DispatchQueue.main.sync {
-            // 1
-            if let changeDetails = changeInstance.changeDetails(for: allPhotos) {
-                allPhotos = changeDetails.fetchResultAfterChanges
-            }
-            // 2
-            //      if let changeDetails = changeInstance.changeDetails(for: smartAlbums) {
-            //        smartAlbums = changeDetails.fetchResultAfterChanges
-            //      }
-            //      if let changeDetails = changeInstance.changeDetails(for: userCollections) {
-            //        userCollections = changeDetails.fetchResultAfterChanges
-            //      }
-            // 4
-            photoView.photoCollectionView.reloadData()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isMovingFromParent {
+            isSelectionMode = false
         }
     }
     
@@ -121,19 +79,67 @@ extension PhotosViewController: PhotosViewDelegate {
 extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return allPhotos.count
+        return assets.count
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RegisterIdentifiers.photoCollectionViewCellId.rawValue,
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if isSelectionMode {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell,
+            let data = cell.photoImageView.image?.pngData() else {
+                return
+            }
+            
+            Database.shared.saveAvatarURL(data: data)
+            isSelectionMode.toggle()
+        }
+       
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? PhotosCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupContent(image: UIImage(systemName: "pencil") ?? UIImage())
+        
+        cell.photoImageView.fetchImageAsset(self.assets[indexPath.item],
+                                            targetSize: CGSize(width: 500,
+                                                               height: 500),
+                                            completionHandler: nil)
         
         return cell
     }
     
+}
+
+extension PhotosViewController: PHPhotoLibraryChangeObserver {
+    
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        guard let change = changeInstance.changeDetails(for: assets) else {
+            return
+        }
+        DispatchQueue.main.sync {
+            assets = change.fetchResultAfterChanges
+            photosView.photosCollectionView.reloadData()
+        }
+    }
+    
+}
+
+extension PhotosViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CollectionViewFlowLayoutType(.photos, frame: view.frame).sizeForItem
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return CollectionViewFlowLayoutType(.photos, frame: view.frame).sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return CollectionViewFlowLayoutType(.photos, frame: view.frame).sectionInsets.left
+    }
 }

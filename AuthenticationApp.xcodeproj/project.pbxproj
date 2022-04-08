@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB30B1062800D244003C54BB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30B1052800D244003C54BB /* UIImageExtension.swift */; };
 		CB31FB3327FB526D005F66FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3227FB526D005F66FF /* AppDelegate.swift */; };
 		CB31FB3527FB526D005F66FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3427FB526D005F66FF /* SceneDelegate.swift */; };
 		CB31FB3727FB526D005F66FF /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3627FB526D005F66FF /* AuthenticationViewController.swift */; };
@@ -45,10 +46,11 @@
 		CBD20A4227FDE49C00DA9886 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4127FDE49C00DA9886 /* ErrorView.swift */; };
 		CBD20A4427FDF2DB00DA9886 /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4327FDF2DB00DA9886 /* UserListTableViewCell.swift */; };
 		CBD20A4627FE47CB00DA9886 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4527FE47CA00DA9886 /* RootViewController.swift */; };
-		CBD20A4827FE47ED00DA9886 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4727FE47ED00DA9886 /* AppDelegateExtension.swift */; };
+		CBD20A4827FE47ED00DA9886 /* SceneDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD20A4727FE47ED00DA9886 /* SceneDelegateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB30B1052800D244003C54BB /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		CB31FB2F27FB526D005F66FF /* AuthenticationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthenticationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB31FB3227FB526D005F66FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB31FB3427FB526D005F66FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		CBD20A4127FDE49C00DA9886 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		CBD20A4327FDF2DB00DA9886 /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
 		CBD20A4527FE47CA00DA9886 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		CBD20A4727FE47ED00DA9886 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		CBD20A4727FE47ED00DA9886 /* SceneDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,6 @@
 			children = (
 				CB31FB4D27FB57DF005F66FF /* Constant.swift */,
 				CB31FB5127FB6102005F66FF /* Enumeration.swift */,
-				CBBA904927FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift */,
 				CBBA903927FF226800CAB0F6 /* Access.swift */,
 				CBD20A4027FDBE0300DA9886 /* Model */,
 				CBD20A3B27FD7ACA00DA9886 /* Services */,
@@ -170,9 +171,10 @@
 				CBD20A2727FCE32F00DA9886 /* UIViewControllerExtension.swift */,
 				CB31FB4A27FB558A005F66FF /* UIViewExtension.swift */,
 				CBBA904F27FF632E00CAB0F6 /* UIImageView+Extension.swift */,
+				CB30B1052800D244003C54BB /* UIImageExtension.swift */,
 				CBD20A2327FCC81600DA9886 /* UIStackViewExtension.swift */,
 				CBD20A2527FCC87200DA9886 /* UITextFieldExtension.swift */,
-				CBD20A4727FE47ED00DA9886 /* AppDelegateExtension.swift */,
+				CBD20A4727FE47ED00DA9886 /* SceneDelegateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +240,7 @@
 		CBD20A3A27FD7AC000DA9886 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
+				CBBA904927FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift */,
 				CBD20A1327FCA2B600DA9886 /* AuthenticationButton.swift */,
 				CBD20A3627FD150400DA9886 /* ScrollViewContainer.swift */,
 				CBD20A4127FDE49C00DA9886 /* ErrorView.swift */,
@@ -340,11 +343,12 @@
 				CBD20A2D27FCF3F900DA9886 /* PhotosView.swift in Sources */,
 				CBD20A2827FCE32F00DA9886 /* UIViewControllerExtension.swift in Sources */,
 				CBD20A3F27FDBDFB00DA9886 /* User.swift in Sources */,
-				CBD20A4827FE47ED00DA9886 /* AppDelegateExtension.swift in Sources */,
+				CBD20A4827FE47ED00DA9886 /* SceneDelegateExtension.swift in Sources */,
 				CBD20A2627FCC87200DA9886 /* UITextFieldExtension.swift in Sources */,
 				CBD20A2027FCBD8800DA9886 /* AuthenticationView.swift in Sources */,
 				CBBA904327FF44B400CAB0F6 /* AlbumsCollectionViewCell.swift in Sources */,
 				CBD20A1627FCAB7A00DA9886 /* InitialViewController.swift in Sources */,
+				CB30B1062800D244003C54BB /* UIImageExtension.swift in Sources */,
 				CBBA903C27FF265700CAB0F6 /* PhotosCollectionViewCell.swift in Sources */,
 				CB31FB3327FB526D005F66FF /* AppDelegate.swift in Sources */,
 				CBD20A4227FDE49C00DA9886 /* ErrorView.swift in Sources */,

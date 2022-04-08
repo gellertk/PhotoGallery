@@ -34,8 +34,7 @@ struct Constant {
     
     struct Collection {
         static let modelProperties = ["login",
-                                       "password"
-                                     ]
+                                       "password"]
     }
     
 }

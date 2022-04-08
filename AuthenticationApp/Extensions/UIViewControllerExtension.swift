@@ -27,17 +27,6 @@ extension UIViewController {
         navigationItem.rightBarButtonItem = exitBarButton
     }
     
-    func addChoosePhotoBarButton() {
-        let choosePhotoBarButton = UIBarButtonItem(title: "Выбрать",
-                                                   style: .plain,
-                                                   target: self,
-                                                   action: #selector(didTapChoosePhotoBarButton))
-        choosePhotoBarButton.customView?.layer.cornerRadius =  choosePhotoBarButton.width / 2
-        choosePhotoBarButton.customView?.backgroundColor = .darkGray
-        choosePhotoBarButton.tintColor = Constant.Color.secondary
-        navigationItem.leftBarButtonItem = choosePhotoBarButton
-    }
-    
     @objc func didTapCloseBarButton() {
         dismiss(animated: true)
     }
@@ -46,10 +35,7 @@ extension UIViewController {
         Database.shared.removeActiveUser()
         SceneDelegate.shared.rootViewController.switchToLogout()
     }
-    
-    @objc func didTapChoosePhotoBarButton() {
-        //authenticationViewController?.openSignInViewController()
-    }
+
     
     func presentFullScreenViewController(viewController: UIViewController,
                                          animate style: UIModalTransitionStyle = .coverVertical) {

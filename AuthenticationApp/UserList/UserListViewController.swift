@@ -9,10 +9,17 @@ import UIKit
 
 class UserListViewController: UIViewController {
     
+    private let userListView = UserListView()
+    
     override func loadView() {
-        let view = UserListView()
+        let view = userListView
         view.delegate = self
         self.view = view
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        userListView.usersTableView.reloadData()
     }
 
 }
@@ -29,22 +36,24 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RegisterIdentifiers.userListTableViewCellId.rawValue) as? UserListTableViewCell else {
-            
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserListTableViewCell.reuseIdentifier) as? UserListTableViewCell else {
             return UITableViewCell()
         }
-        
+                
         let user = Database.shared.users[indexPath.row]
-        
-        cell.setupContent(login: user.login, imageData: user.avatar)
+        var image = UIImage(systemName: "person") ?? UIImage()
+        if let url = user.avatarURL, let savedImage = UIImage(url: url) {
+            image = savedImage
+        }
+       
+        cell.setupContent(login: user.login, image: image)
         
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return Constant.Numeric.defaultUIElementHeight * 2
+        return Constant.Numeric.defaultUIElementHeight * 1.5
     }
     
 }
