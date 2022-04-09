@@ -20,7 +20,11 @@ class InitialViewController: UIViewController {
         makeServiceCall()
     }
     
-    private func makeServiceCall() {
+}
+
+private extension InitialViewController {
+    
+    func makeServiceCall() {
         if Database.shared.activeUser != nil {
             SceneDelegate.shared.rootViewController.switchToMainScreen()
         }

@@ -14,26 +14,17 @@ protocol InitialViewDelegate: AnyObject {
 
 class InitialView: UIView {
     
-    public weak var delegate: InitialViewDelegate?
+    weak var delegate: InitialViewDelegate?
 
-    //TODO: Make it universal
-    private let toSignInVCButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Войти в аккаунт", for: .normal)
-        button.backgroundColor = Constant.Color.primary
-        button.setTitleColor(Constant.Color.secondary, for: .normal)
-        button.setTitleColor(Constant.Color.disabledSecondary, for: .highlighted)
+    private let toSignInVCButton: InitialButton = {
+        let button = InitialButton(title: "Войти в аккаунт")
         button.addTarget(self, action: #selector(didTapToSignInVCButton), for: .touchUpInside)
 
         return button
     }()
     
-    private let toRegistrationVCButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Зарегистрироваться", for: .normal)
-        button.backgroundColor = Constant.Color.primary
-        button.setTitleColor(Constant.Color.secondary, for: .normal)
-        button.setTitleColor(Constant.Color.disabledSecondary, for: .highlighted)
+    private let toRegistrationVCButton: InitialButton = {
+        let button = InitialButton(title: "Зарегистрироваться")
         button.addTarget(self, action: #selector(didTapToRegistrationVCButton), for: .touchUpInside)
         
         return button

@@ -13,19 +13,19 @@ protocol UserListViewDelegate: AnyObject {
 
 class UserListView: UIView {
     
-    public weak var delegate: UserListViewDelegate? {
+    weak var delegate: UserListViewDelegate? {
         didSet {
             usersTableView.delegate = delegate as? UITableViewDelegate
             usersTableView.dataSource = delegate as? UITableViewDataSource
         }
     }
     
-    public lazy var usersTableView: UITableView = {
+    lazy var usersTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = Constant.Color.primary
         tableView.register(UserListTableViewCell.self,
-                           forCellReuseIdentifier: UserListTableViewCell.reuseIdentifier)
-        tableView.separatorColor = .white.withAlphaComponent(0.3)
+                           forCellReuseIdentifier: UserListTableViewCell.reuseId)
+        tableView.separatorColor = Constant.Color.disabledSecondary
         
         return tableView
     }()

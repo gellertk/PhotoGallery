@@ -7,12 +7,11 @@
 
 import UIKit
 
-// TODO: Make it universal
 class AuthenticationTextField: UITextField {
     
     private let type: AuthenticationTextFieldType?
     
-    private lazy var eyePasswordToggleButton: UIButton = {
+    private let eyePasswordToggleButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "eye"), for: .normal)
         button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
@@ -40,7 +39,7 @@ class AuthenticationTextField: UITextField {
         changeClearButtonColor()
     }
     
-    public func setupEyeToggleButtonVisible(isHidden: Bool) {
+    func setupEyeToggleButtonVisible(isHidden: Bool) {
         eyePasswordToggleButton.isHidden = isHidden
     }
     

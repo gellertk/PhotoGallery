@@ -87,7 +87,7 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCollectionViewCell.reuseIdentifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCollectionViewCell.reuseId,
                                                             for: indexPath) as? AlbumsCollectionViewCell else {
             return UICollectionViewCell()
         }

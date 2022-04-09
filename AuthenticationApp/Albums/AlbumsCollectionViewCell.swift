@@ -9,9 +9,9 @@ import UIKit
 
 class AlbumsCollectionViewCell: UICollectionViewCell {
     
-    static let reuseIdentifier = "albumsCollectionViewCellId"
+    static let reuseId = "albumsCollectionViewCellId"
     
-    public let albumImageView: UIImageView = {
+    let albumImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(systemName: "photo")

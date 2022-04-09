@@ -10,7 +10,7 @@ import UIKit
 class ScrollViewContainer: UIView {
 
     // MARK: - Properties
-    public let scrollView: UIScrollView = {
+    let scrollView: UIScrollView = {
 
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear

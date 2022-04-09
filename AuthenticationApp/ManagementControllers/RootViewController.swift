@@ -19,7 +19,7 @@ class RootViewController: UIViewController {
         self.current = MainNavigationController(rootViewController: InitialViewController())
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -74,11 +74,11 @@ class RootViewController: UIViewController {
     }
     
     func switchToMainScreen() {
-       let mainViewController = MainTabBarController()
-       mainViewController.modalPresentationStyle = .fullScreen
-       let mainScreen = MainNavigationController(rootViewController: mainViewController)
+        let mainViewController = MainTabBarController()
+        mainViewController.modalPresentationStyle = .fullScreen
+        let mainScreen = MainNavigationController(rootViewController: mainViewController)
         mainScreen.modalPresentationStyle = .overFullScreen
-       animateFadeTransition(to: mainScreen)
+        animateFadeTransition(to: mainScreen)
     }
     
     func switchToLogout() {

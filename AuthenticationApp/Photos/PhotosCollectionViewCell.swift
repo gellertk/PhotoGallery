@@ -9,7 +9,7 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    static let reuseIdentifier = "photosCollectionViewCellId"
+    static let reuseId = "photosCollectionViewCellId"
     
     let photoImageView: UIImageView = {
         let imageView = UIImageView()

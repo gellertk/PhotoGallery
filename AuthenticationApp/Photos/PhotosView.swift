@@ -13,7 +13,7 @@ protocol PhotosViewDelegate: AnyObject {
 
 class PhotosView: UIView {
     
-    public weak var delegate: PhotosViewDelegate? {
+    weak var delegate: PhotosViewDelegate? {
         didSet {
             photosCollectionView.delegate = delegate as? UICollectionViewDelegate
             photosCollectionView.dataSource = delegate as? UICollectionViewDataSource
@@ -29,11 +29,11 @@ class PhotosView: UIView {
         return flowLayout
     }()
     
-    public lazy var photosCollectionView: UICollectionView = {
+    lazy var photosCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: photosCollectionViewFlowLayout)
         collectionView.register(PhotosCollectionViewCell.self,
-                                forCellWithReuseIdentifier: PhotosCollectionViewCell.reuseIdentifier)
+                                forCellWithReuseIdentifier: PhotosCollectionViewCell.reuseId)
         collectionView.backgroundColor = Constant.Color.primary
         
         return collectionView

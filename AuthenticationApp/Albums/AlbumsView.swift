@@ -32,7 +32,7 @@ class AlbumsView: UIView {
     lazy var albumsCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: albumsCollectionViewFlowLayout)
         collectionView.register(AlbumsCollectionViewCell.self,
-                                forCellWithReuseIdentifier: AlbumsCollectionViewCell.reuseIdentifier)
+                                forCellWithReuseIdentifier: AlbumsCollectionViewCell.reuseId)
         collectionView.backgroundColor = Constant.Color.primary
         
         return collectionView

@@ -20,6 +20,7 @@ class PhotosViewController: UIViewController {
             tabBarController?.tabBar.isHidden = isSelectionMode
         }
     }
+    
     private let photosView = PhotosView()
     private var assets: PHFetchResult<PHAsset>
     
@@ -36,10 +37,6 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         PHPhotoLibrary.shared().register(self)
         addChoosePhotoBarButton()
-    }
-    
-    deinit {
-        PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
     
     override func loadView() {
@@ -70,6 +67,15 @@ class PhotosViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    deinit {
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
+    }
+    
 }
 
 extension PhotosViewController: PhotosViewDelegate {
@@ -84,6 +90,7 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        //MARK: Selection avatar mode
         if isSelectionMode {
             guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell,
             let data = cell.photoImageView.image?.pngData() else {
@@ -92,12 +99,15 @@ extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSo
             
             Database.shared.saveAvatarURL(data: data)
             isSelectionMode.toggle()
+        } else {
+            let vc = PhotoViewController(assets: assets, passedContentOffset: indexPath)
+            navigationController?.pushViewController(vc, animated: true)
         }
        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.reuseIdentifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosCollectionViewCell.reuseId,
                                                             for: indexPath) as? PhotosCollectionViewCell else {
             return UICollectionViewCell()
         }

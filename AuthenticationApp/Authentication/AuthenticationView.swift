@@ -14,11 +14,11 @@ protocol AuthenticationViewDelegate: AnyObject {
 
 class AuthenticationView: UIView {
     
-    private var type: AuthenticationInterfaceType?
-    
-    public weak var delegate: AuthenticationViewDelegate?
-    
+    weak var delegate: AuthenticationViewDelegate?
+
     private let errorView = ErrorView()
+    
+    private var type: AuthenticationInterfaceType?
     
     private lazy var signUpLoginTextField = AuthenticationTextField(type: .signUpLogin)
     private lazy var signUpPasswordTextField = AuthenticationTextField(type: .signUpPassword)
@@ -26,7 +26,7 @@ class AuthenticationView: UIView {
     private lazy var signInLoginTextField = AuthenticationTextField(type: .signInLogin)
     private lazy var signInPasswordTextField = AuthenticationTextField(type: .signInPassword)
     
-    public lazy var textFieldsStackView: UIStackView = {
+    lazy var textFieldsStackView: UIStackView = {
 
         var arrangedSubviews: [UITextField] = []
         

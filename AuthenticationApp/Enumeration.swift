@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreImage
+import UIKit
 
 enum AuthenticationTextFieldType {
     case signInLogin
@@ -65,10 +67,3 @@ enum AlbumCollectionSectionType: Int {
     }
     
 }
-
-//enum RegisterIdentifiers: String {
-//    case userListTableViewCellId
-//    case albumsCollectionViewCellId
-//    case photosCollectionViewCellId
-//    case albumsTitleViewId
-//}

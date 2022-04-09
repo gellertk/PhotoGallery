@@ -9,7 +9,7 @@ import UIKit
 
 class UserListTableViewCell: UITableViewCell {
     
-    static let reuseIdentifier = "userListTableViewCellId"
+    static let reuseId = "userListTableViewCellId"
 
     private let loginLabel: UILabel = {
         let label = UILabel()
@@ -20,16 +20,13 @@ class UserListTableViewCell: UITableViewCell {
     
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = Constant.Color.secondary
-        imageView.contentMode = .scaleAspectFill
-        //imageView.backgroundColor = .darkGray
-        //label.textColor = Constant.Color.secondary
+        imageView.backgroundColor = Constant.Color.primary
         
         return imageView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: UserListTableViewCell.reuseIdentifier)
+        super.init(style: style, reuseIdentifier: UserListTableViewCell.reuseId)
         setupView()
     }
     
@@ -37,25 +34,15 @@ class UserListTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        avatarImageView.layer.cornerRadius = frame.width / 2
-
-//        contentView.layer.cornerRadius = Constant.Numeric.defaultCornerRadius
-//        layer.cornerRadius = Constant.Numeric.defaultCornerRadius
-        //avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
-        //avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
-    }
-    
 }
 
 private extension UserListTableViewCell {
     
     func setupView() {
+        backgroundColor = Constant.Color.primary
         preservesSuperviewLayoutMargins = false
         separatorInset = .zero
         layoutMargins = .zero
-        backgroundColor = Constant.Color.primary
         selectionStyle = .none
         contentView.addSubviews([loginLabel,
                                  avatarImageView])

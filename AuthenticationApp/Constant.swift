@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Foundation
 
 struct Constant {
     
+    
     struct String {
-      
+        
     }
     
     struct Color {
@@ -34,7 +36,21 @@ struct Constant {
     
     struct Collection {
         static let modelProperties = ["login",
-                                       "password"]
+                                      "password"]
+        static let ciFilters: KeyValuePairs = [
+            "CIBumpDistortion": UIImage(systemName: "circle.lefthalf.filled"),
+            "CIGaussianBlur": UIImage(systemName: "circle.lefthalf.filled"),
+            "CIPixellate": UIImage(systemName: "circle.lefthalf.filled"),
+            "CISepiaTone": UIImage(systemName: "circle.lefthalf.filled"),
+            "CITwirlDistortion": UIImage(systemName: "circle.lefthalf.filled"),
+            "CIUnsharpMask": UIImage(systemName: "circle.lefthalf.filled"),
+            "CIVignette": UIImage(systemName: "circle.lefthalf.filled")
+        ]
+        
+        static let tabBarTitlesAndImages: KeyValuePairs = [
+            "Галерея фото": UIImage(systemName: "photo.on.rectangle.angled") ?? UIImage(),
+            "Список пользователей": UIImage(systemName: "person.fill") ?? UIImage(),
+        ]
     }
     
 }

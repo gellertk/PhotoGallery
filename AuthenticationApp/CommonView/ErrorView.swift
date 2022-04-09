@@ -29,7 +29,7 @@ class ErrorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupErrorLabel(text: String) {
+    func setupErrorLabel(text: String) {
         errorLabel.text = text
         isHidden = false
     }

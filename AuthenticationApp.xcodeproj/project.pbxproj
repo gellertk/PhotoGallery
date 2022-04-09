@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB209565280174F80064D3F4 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB209564280174F80064D3F4 /* PhotoCollectionViewCell.swift */; };
+		CB20956A2801D9340064D3F4 /* FilterVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2095692801D9340064D3F4 /* FilterVIew.swift */; };
+		CB20956C2801DE2B0064D3F4 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20956B2801DE2B0064D3F4 /* FilterCollectionViewCell.swift */; };
+		CB20956E2801E37D0064D3F4 /* InitialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB20956D2801E37D0064D3F4 /* InitialButton.swift */; };
 		CB30B1062800D244003C54BB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30B1052800D244003C54BB /* UIImageExtension.swift */; };
 		CB31FB3327FB526D005F66FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3227FB526D005F66FF /* AppDelegate.swift */; };
 		CB31FB3527FB526D005F66FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB3427FB526D005F66FF /* SceneDelegate.swift */; };
@@ -17,7 +21,7 @@
 		CB31FB4E27FB57DF005F66FF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4D27FB57DF005F66FF /* Constant.swift */; };
 		CB31FB5027FB5F3D005F66FF /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB4F27FB5F3D005F66FF /* AuthenticationTextField.swift */; };
 		CB31FB5227FB6102005F66FF /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB5127FB6102005F66FF /* Enumeration.swift */; };
-		CBBA903A27FF226800CAB0F6 /* Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA903927FF226800CAB0F6 /* Access.swift */; };
+		CBADD921280204CD00D0FFD9 /* FilterCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBADD920280204CD00D0FFD9 /* FilterCollectionViewFlowLayout.swift */; };
 		CBBA903C27FF265700CAB0F6 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA903B27FF265700CAB0F6 /* PhotosCollectionViewCell.swift */; };
 		CBBA903E27FF446A00CAB0F6 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA903D27FF446A00CAB0F6 /* AlbumsViewController.swift */; };
 		CBBA904127FF448200CAB0F6 /* AlbumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBA904027FF448200CAB0F6 /* AlbumsView.swift */; };
@@ -50,6 +54,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB209564280174F80064D3F4 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB2095692801D9340064D3F4 /* FilterVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVIew.swift; sourceTree = "<group>"; };
+		CB20956B2801DE2B0064D3F4 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB20956D2801E37D0064D3F4 /* InitialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialButton.swift; sourceTree = "<group>"; };
 		CB30B1052800D244003C54BB /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		CB31FB2F27FB526D005F66FF /* AuthenticationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthenticationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB31FB3227FB526D005F66FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +70,7 @@
 		CB31FB4D27FB57DF005F66FF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CB31FB4F27FB5F3D005F66FF /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
 		CB31FB5127FB6102005F66FF /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
-		CBBA903927FF226800CAB0F6 /* Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access.swift; sourceTree = "<group>"; };
+		CBADD920280204CD00D0FFD9 /* FilterCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		CBBA903B27FF265700CAB0F6 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		CBBA903D27FF446A00CAB0F6 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		CBBA904027FF448200CAB0F6 /* AlbumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsView.swift; sourceTree = "<group>"; };
@@ -126,18 +134,18 @@
 			children = (
 				CB31FB4D27FB57DF005F66FF /* Constant.swift */,
 				CB31FB5127FB6102005F66FF /* Enumeration.swift */,
-				CBBA903927FF226800CAB0F6 /* Access.swift */,
 				CBD20A4027FDBE0300DA9886 /* Model */,
 				CBD20A3B27FD7ACA00DA9886 /* Services */,
+				CBD20A3A27FD7AC000DA9886 /* CommonView */,
 				CBD20A3527FCFB0900DA9886 /* ManagementControllers */,
 				CBD20A1727FCAB8000DA9886 /* Initial */,
 				CB31FB4927FB5475005F66FF /* Authentication */,
 				CBBA903F27FF447000CAB0F6 /* Albums */,
 				CBD20A2B27FCF38C00DA9886 /* Photos */,
 				CBBA904627FF455300CAB0F6 /* Photo */,
+				CBADD922280204D900D0FFD9 /* Filter */,
 				CBD20A3227FCFAC800DA9886 /* UserList */,
 				CB31FB4C27FB5590005F66FF /* Extensions */,
-				CBD20A3A27FD7AC000DA9886 /* CommonView */,
 				CB31FB4627FB5364005F66FF /* SupportingFiles */,
 				CB31FB3B27FB526F005F66FF /* Assets.xcassets */,
 				CB31FB3D27FB526F005F66FF /* LaunchScreen.storyboard */,
@@ -179,6 +187,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CBADD922280204D900D0FFD9 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				CB2095692801D9340064D3F4 /* FilterVIew.swift */,
+				CB20956B2801DE2B0064D3F4 /* FilterCollectionViewCell.swift */,
+				CBADD920280204CD00D0FFD9 /* FilterCollectionViewFlowLayout.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		CBBA903F27FF447000CAB0F6 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +212,7 @@
 			children = (
 				CBBA904427FF453F00CAB0F6 /* PhotoViewController.swift */,
 				CBBA904727FF457400CAB0F6 /* PhotoView.swift */,
+				CB209564280174F80064D3F4 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -203,6 +222,7 @@
 			children = (
 				CBD20A1527FCAB7A00DA9886 /* InitialViewController.swift */,
 				CBD20A1827FCABEA00DA9886 /* InitialView.swift */,
+				CB20956D2801E37D0064D3F4 /* InitialButton.swift */,
 			);
 			path = Initial;
 			sourceTree = "<group>";
@@ -240,10 +260,10 @@
 		CBD20A3A27FD7AC000DA9886 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
-				CBBA904927FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift */,
 				CBD20A1327FCA2B600DA9886 /* AuthenticationButton.swift */,
-				CBD20A3627FD150400DA9886 /* ScrollViewContainer.swift */,
+				CBBA904927FF4BF800CAB0F6 /* CollectionViewFlowLayout.swift */,
 				CBD20A4127FDE49C00DA9886 /* ErrorView.swift */,
+				CBD20A3627FD150400DA9886 /* ScrollViewContainer.swift */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -336,7 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB31FB4B27FB558A005F66FF /* UIViewExtension.swift in Sources */,
-				CBBA903A27FF226800CAB0F6 /* Access.swift in Sources */,
 				CBD20A3127FCFAC000DA9886 /* UserListViewController.swift in Sources */,
 				CB31FB3727FB526D005F66FF /* AuthenticationViewController.swift in Sources */,
 				CBBA903E27FF446A00CAB0F6 /* AlbumsViewController.swift in Sources */,
@@ -347,8 +366,11 @@
 				CBD20A2627FCC87200DA9886 /* UITextFieldExtension.swift in Sources */,
 				CBD20A2027FCBD8800DA9886 /* AuthenticationView.swift in Sources */,
 				CBBA904327FF44B400CAB0F6 /* AlbumsCollectionViewCell.swift in Sources */,
+				CB20956E2801E37D0064D3F4 /* InitialButton.swift in Sources */,
 				CBD20A1627FCAB7A00DA9886 /* InitialViewController.swift in Sources */,
 				CB30B1062800D244003C54BB /* UIImageExtension.swift in Sources */,
+				CBADD921280204CD00D0FFD9 /* FilterCollectionViewFlowLayout.swift in Sources */,
+				CB209565280174F80064D3F4 /* PhotoCollectionViewCell.swift in Sources */,
 				CBBA903C27FF265700CAB0F6 /* PhotosCollectionViewCell.swift in Sources */,
 				CB31FB3327FB526D005F66FF /* AppDelegate.swift in Sources */,
 				CBD20A4227FDE49C00DA9886 /* ErrorView.swift in Sources */,
@@ -362,8 +384,10 @@
 				CBD20A3D27FDBDB000DA9886 /* Database.swift in Sources */,
 				CBD20A3927FD187D00DA9886 /* KeyboardService.swift in Sources */,
 				CBBA904827FF457400CAB0F6 /* PhotoView.swift in Sources */,
+				CB20956A2801D9340064D3F4 /* FilterVIew.swift in Sources */,
 				CBBA904127FF448200CAB0F6 /* AlbumsView.swift in Sources */,
 				CBD20A2427FCC81600DA9886 /* UIStackViewExtension.swift in Sources */,
+				CB20956C2801DE2B0064D3F4 /* FilterCollectionViewCell.swift in Sources */,
 				CBD20A3727FD150400DA9886 /* ScrollViewContainer.swift in Sources */,
 				CBD20A4627FE47CB00DA9886 /* RootViewController.swift in Sources */,
 				CBBA904527FF453F00CAB0F6 /* PhotoViewController.swift in Sources */,

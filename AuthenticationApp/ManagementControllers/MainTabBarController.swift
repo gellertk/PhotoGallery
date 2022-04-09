@@ -27,10 +27,7 @@ class MainTabBarController: UITabBarController {
         
         if let items = tabBar.items {
             
-            let titlesAndImages: KeyValuePairs = [
-                "Галерея фото": UIImage(systemName: "photo.on.rectangle.angled") ?? UIImage(),
-                "Список пользователей": UIImage(systemName: "person.fill") ?? UIImage(),
-            ]
+            let titlesAndImages = Constant.Collection.tabBarTitlesAndImages
             
             for index in titlesAndImages.indices {
                 items[index].title = titlesAndImages[index].key
@@ -39,8 +36,8 @@ class MainTabBarController: UITabBarController {
             
             tabBar.unselectedItemTintColor = Constant.Color.disabledSecondary
             tabBar.tintColor = Constant.Color.secondary
+            tabBar.barTintColor = Constant.Color.primary
             tabBar.isTranslucent = false
-            tabBar.barTintColor = .black
         }
         
         addExitBarButton()
