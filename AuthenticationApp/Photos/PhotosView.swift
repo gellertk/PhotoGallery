@@ -7,16 +7,12 @@
 
 import UIKit
 
-protocol PhotosViewDelegate: AnyObject {
-    
-}
-
 class PhotosView: UIView {
     
-    weak var delegate: PhotosViewDelegate? {
+    weak var delegate: PhotosViewController? {
         didSet {
-            photosCollectionView.delegate = delegate as? UICollectionViewDelegate
-            photosCollectionView.dataSource = delegate as? UICollectionViewDataSource
+            photosCollectionView.delegate = delegate
+            photosCollectionView.dataSource = delegate
         }
     }
     
@@ -46,13 +42,6 @@ class PhotosView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //photosCollectionView.collectionViewLayout.invalidateLayout()
-        //photosCollectionViewFlowLayout.itemSize = CGSize(width: frame.width / 3 - 1,
-                                                        //height: frame.width / 3 - 1)
     }
     
 }

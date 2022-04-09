@@ -7,24 +7,20 @@
 
 import UIKit
 
-protocol AlbumsViewDelegate: AnyObject {
-    
-}
-
 class AlbumsView: UIView {
     
-    weak var delegate: AlbumsViewDelegate? {
+    weak var delegate: AlbumsViewController? {
         didSet {
-            albumsCollectionView.delegate = delegate as? UICollectionViewDelegate
-            albumsCollectionView.dataSource = delegate as? UICollectionViewDataSource
+            albumsCollectionView.delegate = delegate
+            albumsCollectionView.dataSource = delegate
         }
     }
     
     private let albumsCollectionViewFlowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 1
-        flowLayout.minimumInteritemSpacing = 1
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.minimumInteritemSpacing = 5
         
         return flowLayout
     }()
@@ -49,8 +45,8 @@ class AlbumsView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        albumsCollectionViewFlowLayout.itemSize = CGSize(width: frame.width / 2 - 1,
-                                                        height: frame.width / 2 - 1)
+//        albumsCollectionViewFlowLayout.itemSize = CGSize(width: frame.width / 2 - 1,
+//                                                        height: frame.width / 2 - 1)
     }
 
 }

@@ -9,10 +9,6 @@ import UIKit
 import Photos
 import CoreImage
 
-protocol PhotoViewControllerDelegate: AnyObject {
-    
-}
-
 class PhotoViewController: UIViewController {
     
     private var centerCell: FilterCollectionViewCell?
@@ -23,12 +19,12 @@ class PhotoViewController: UIViewController {
     private var context: CIContext?
     private var currentCell: PhotoCollectionViewCell?
     private var currentFilter: CIFilter?
-    private var intensity: Float = 0.0
+    private var intensity: Float = 0.5
     
     private var isFilterMode = false {
         didSet {
             if isFilterMode {
-                navigationItem.rightBarButtonItem?.title = "Закончить правку"
+                navigationItem.rightBarButtonItem?.title = "Сохранить картинку"
             } else {
                 navigationItem.rightBarButtonItem?.title = "Править"
             }
@@ -46,7 +42,7 @@ class PhotoViewController: UIViewController {
     private lazy var filterView: FilterView = {
         let view = FilterView()
         view.delegate = self
-
+        
         return view
     }()
     
@@ -88,17 +84,13 @@ extension PhotoViewController: FilterViewDelegate {
     
 }
 
-extension PhotoViewController: PhotoViewDelegate {
-    
-}
-
 private extension PhotoViewController {
     
     func setupView() {
         addChoosePhotoBarButton()
         tabBarController?.tabBar.isHidden = true
         view.addSubviews([photoView,
-                         filterView])
+                          filterView])
         setupConstraints()
     }
     
@@ -128,6 +120,13 @@ private extension PhotoViewController {
     }
     
     @objc func didTapFilterButton() {
+        if isFilterMode {
+            if let image = currentCell?.photoImageView.image {
+                UIImageWriteToSavedPhotosAlbum(image,
+                                               self,
+                                               #selector(image(_ :didFinishSavingWithError:contextInfo:)), nil)
+            }
+        }
         isFilterMode.toggle()
     }
     
@@ -136,7 +135,7 @@ private extension PhotoViewController {
         guard let inputKeys = currentFilter?.inputKeys else {
             return
         }
-            
+        
         if inputKeys.contains(kCIInputIntensityKey) {
             currentFilter?.setValue(intensity, forKey: kCIInputIntensityKey)
         }
@@ -174,7 +173,7 @@ private extension PhotoViewController {
         currentFilter?.setValue(beginImage, forKey: kCIInputImageKey)
         applyProcessing()
     }
-
+    
 }
 
 extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -191,7 +190,7 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         if collectionView.tag == 1 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.reuseId,
                                                                 for: indexPath) as? PhotoCollectionViewCell else {
@@ -199,8 +198,6 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
             }
             cell.photoImageView.fetchImageAsset(assets[indexPath.row], targetSize: view.bounds.size, completionHandler: nil)
             currentCell = cell
-            //setFilter(name: currentFilter?.name ?? "")
-            //setFilter(name: filterNameAndImage.key)
             
             return cell
         } else {
@@ -212,7 +209,6 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
             
             let filterNameAndImage = Constant.Collection.ciFilters[indexPath.row]
             cell.setupContent(filterImage: filterNameAndImage.value ?? UIImage())
-            //setFilter(name: filterNameAndImage.key)
             
             return cell
         }
@@ -220,15 +216,25 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        guard scrollView is UICollectionView else {
+        guard let scrolledCollectionView = scrollView as? UICollectionView else {
             return
         }
         
-        let centerPoint = CGPoint(x: filterView.filterCollectionView.frame.size.width / 2 + scrollView.contentOffset.x,
-                                  y: filterView.filterCollectionView.frame.size.height / 2 + scrollView.contentOffset.y)
-        
-        if let indexPath = filterView.filterCollectionView.indexPathForItem(at: centerPoint) {
-            setFilter(name: Constant.Collection.ciFilters[indexPath.row].key)
+        if scrolledCollectionView.tag == 1 {
+            let centerPoint = CGPoint(x: photoView.photoCollectionView.frame.size.width / 2 + scrollView.contentOffset.x,
+                                      y: photoView.photoCollectionView.frame.size.height / 2 + scrollView.contentOffset.y)
+            if let indexPath = photoView.photoCollectionView.indexPathForItem(at: centerPoint) {
+                currentCell = scrolledCollectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell
+                setFilter(name: currentFilter?.name ?? "")
+            }
+        } else {
+            let centerPoint = CGPoint(x: filterView.filterCollectionView.frame.size.width / 2 + scrollView.contentOffset.x,
+                                      y: filterView.filterCollectionView.frame.size.height / 2 + scrollView.contentOffset.y)
+            if let indexPath = filterView.filterCollectionView.indexPathForItem(at: centerPoint) {
+                let filterName = Constant.Collection.ciFilters[indexPath.row].key
+                setFilter(name: filterName)
+                filterView.filterTitleLabel.text = filterName.replacingOccurrences(of: "CI", with: "")
+            }
         }
     }
     
@@ -246,7 +252,6 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
             }
             self.centerCell = centerCell
             centerCell.transformToBordered()
-            //setFilter(name: Constant.Collection.ciFilters[indexPath.row].key)
         }
         
         if let cell = centerCell {
@@ -257,6 +262,12 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
         
+    }
+        
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            print(error.localizedDescription)
+        }
     }
     
 }

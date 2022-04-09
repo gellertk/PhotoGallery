@@ -9,13 +9,12 @@ import UIKit
 
 class ScrollViewContainer: UIView {
 
-    // MARK: - Properties
     let scrollView: UIScrollView = {
-
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
         scrollView.indicatorStyle = .white
         scrollView.isScrollEnabled = true
+        
         return scrollView
     }()
 
@@ -27,7 +26,6 @@ class ScrollViewContainer: UIView {
         return service
     }()
 
-    // MARK: - Initialization
     convenience init(with view: UIView) {
         self.init()
 
@@ -37,7 +35,6 @@ class ScrollViewContainer: UIView {
         backgroundColor = Constant.Color.primary
     }
 
-    // MARK: - Module function
     private func setupConstraints(with view: UIView) {
 
         addSubviews([scrollView])

@@ -9,15 +9,12 @@ import UIKit
 
 class KeyboardService {
 
-    // MARK: - Properties
     weak private var view: ScrollViewContainer?
 
-    // MARK: - Initialization
     init(container: ScrollViewContainer) {
         self.view = container
     }
 
-    // MARK: - Public function
     public func setupKeyboard() {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(endEditing))
@@ -34,7 +31,6 @@ class KeyboardService {
                                                object: nil)
     }
 
-    // MARK: - Actions
     @objc func endEditing() {
         view?.endEditing(true)
     }

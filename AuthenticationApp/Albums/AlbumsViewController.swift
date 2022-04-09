@@ -24,6 +24,7 @@ class AlbumsViewController: UIViewController {
         let view = albumsView
         view.delegate = self
         self.view = view
+        navigationController?.navigationBar.barTintColor = Constant.Color.primary
     }
     
     deinit {
@@ -75,10 +76,6 @@ extension AlbumsViewController {
             subtype: .albumRegular,
             options: nil)
     }
-    
-}
-
-extension AlbumsViewController: AlbumsViewDelegate {
     
 }
 

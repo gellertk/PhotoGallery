@@ -64,7 +64,7 @@ private extension AlbumsCollectionViewCell {
             albumImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
             
             albumTitleLabel.topAnchor.constraint(equalTo: albumImageView.bottomAnchor, constant: 10),
-            albumTitleLabel.centerXAnchor.constraint(equalTo: albumImageView.centerXAnchor),
+            albumTitleLabel.centerXAnchor.constraint(equalTo: albumImageView.centerXAnchor)
         ])
     }
     

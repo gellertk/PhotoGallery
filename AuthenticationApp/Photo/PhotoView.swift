@@ -7,18 +7,14 @@
 
 import UIKit
 
-protocol PhotoViewDelegate: AnyObject {
-    
-}
-
 class PhotoView: UIView {
     
     private var passedContentOffset = IndexPath()
     
-    weak var delegate: PhotoViewDelegate? {
+    weak var delegate: PhotoViewController? {
         didSet {
-            photoCollectionView.delegate = delegate as? UICollectionViewDelegate
-            photoCollectionView.dataSource = delegate as? UICollectionViewDataSource
+            photoCollectionView.delegate = delegate
+            photoCollectionView.dataSource = delegate
         }
     }
     

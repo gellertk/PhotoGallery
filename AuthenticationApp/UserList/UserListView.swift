@@ -7,16 +7,12 @@
 
 import UIKit
 
-protocol UserListViewDelegate: AnyObject {
-    
-}
-
 class UserListView: UIView {
     
-    weak var delegate: UserListViewDelegate? {
+    weak var delegate: UserListViewController? {
         didSet {
-            usersTableView.delegate = delegate as? UITableViewDelegate
-            usersTableView.dataSource = delegate as? UITableViewDataSource
+            usersTableView.delegate = delegate
+            usersTableView.dataSource = delegate
         }
     }
     

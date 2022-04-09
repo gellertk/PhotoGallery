@@ -12,7 +12,7 @@ protocol FilterViewDelegate: AnyObject {
 }
 
 class FilterView: UIView {
-        
+    
     weak var delegate: FilterViewDelegate? {
         didSet {
             filterCollectionView.delegate = delegate as? UICollectionViewDelegate
@@ -34,6 +34,13 @@ class FilterView: UIView {
         return collectionView
     }()
     
+    let filterTitleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = Constant.Color.secondary
+        
+        return label
+    }()
+    
     private let filterSlider: UISlider = {
         let slider = UISlider()
         slider.value = 0.5
@@ -51,18 +58,15 @@ class FilterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
- 
-    }
-    
 }
 
 private extension FilterView {
     
     func setupView() {
         isHidden = true
-        addSubviews([filterCollectionView, filterSlider])
+        addSubviews([filterCollectionView,
+                     filterSlider,
+                     filterTitleLabel])
         setupConstraints()
     }
     
@@ -76,7 +80,10 @@ private extension FilterView {
             filterCollectionView.topAnchor.constraint(equalTo: filterSlider.bottomAnchor),
             filterCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             filterCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            filterCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            filterCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30),
+            
+            filterTitleLabel.topAnchor.constraint(equalTo: filterCollectionView.bottomAnchor, constant: 10),
+            filterTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
     }

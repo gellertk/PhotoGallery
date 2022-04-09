@@ -78,10 +78,6 @@ class PhotosViewController: UIViewController {
     
 }
 
-extension PhotosViewController: PhotosViewDelegate {
-    
-}
-
 extension PhotosViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

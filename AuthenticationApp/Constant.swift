@@ -10,11 +10,6 @@ import Foundation
 
 struct Constant {
     
-    
-    struct String {
-        
-    }
-    
     struct Color {
         static let primary: UIColor = .black
         static let secondary: UIColor = .white
@@ -39,12 +34,12 @@ struct Constant {
                                       "password"]
         static let ciFilters: KeyValuePairs = [
             "CIBumpDistortion": UIImage(systemName: "circle.lefthalf.filled"),
-            "CIGaussianBlur": UIImage(systemName: "circle.lefthalf.filled"),
-            "CIPixellate": UIImage(systemName: "circle.lefthalf.filled"),
-            "CISepiaTone": UIImage(systemName: "circle.lefthalf.filled"),
-            "CITwirlDistortion": UIImage(systemName: "circle.lefthalf.filled"),
-            "CIUnsharpMask": UIImage(systemName: "circle.lefthalf.filled"),
-            "CIVignette": UIImage(systemName: "circle.lefthalf.filled")
+            "CIGaussianBlur": UIImage(systemName: "circle.dashed.inset.filled"),
+            "CIPixellate": UIImage(systemName: "circle.dashed"),
+            "CISepiaTone": UIImage(systemName: "circle.and.line.horizontal"),
+            "CITwirlDistortion": UIImage(systemName: "circle.and.line.horizontal"),
+            "CIUnsharpMask": UIImage(systemName: "wand.and.rays"),
+            "CIVignette": UIImage(systemName: "dial.max.fill")
         ]
         
         static let tabBarTitlesAndImages: KeyValuePairs = [

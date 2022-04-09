@@ -11,7 +11,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     static let reuseId = "photoCollectionViewCellId"
     
-    private weak var delegate: PhotoViewControllerDelegate?
+    private weak var delegate: PhotoViewController?
     
     private lazy var photoScrollView: UIScrollView = {
         let scrollView = UIScrollView()

@@ -15,6 +15,7 @@ class UserListViewController: UIViewController {
         let view = userListView
         view.delegate = self
         self.view = view
+        navigationController?.navigationBar.barTintColor = Constant.Color.primary
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,10 +23,6 @@ class UserListViewController: UIViewController {
         userListView.usersTableView.reloadData()
     }
 
-}
-
-extension UserListViewController: UserListViewDelegate {
-    
 }
 
 extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
